@@ -2,14 +2,12 @@
 class LinkBuilder{
     OpenLinkBuilder()
     {
-        cy.get('#search').type('Testing Project',{scrollBehavior:false})
-            cy.wait(2000)
-            cy.get('.basis-1\\/12 > :nth-child(2) > .flex-shrink-0').realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false}).realMouseMove(100,100)
-            cy.wait(2000)
+        cy.get('#search').type('Testing Project',{scrollBehavior:false}).wait(2000)
+            cy.get('.basis-1\\/12 > :nth-child(2) > .flex-shrink-0').realHover({scrollBehavior:false})
+            .wait(1000).click({scrollBehavior:false}).realMouseMove(100,100).wait(2000)
             cy.get('.project-row > :nth-child(1) > a').click({scrollBehavior:false}).wait(2000)
             cy.get('.projects-name').realHover({scrollBehavior:false}).wait(2000)
-            cy.contains('Link Builder').realHover().wait(2000).click()
-            cy.wait(3000)
+            cy.contains('Link Builder').realHover().wait(2000).click().wait(3000)
     }
     CreateLink()
     {

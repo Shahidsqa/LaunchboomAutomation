@@ -13,8 +13,7 @@ class PostCampaign{
             cy.get('.igg-btn').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(100,100).wait(2000)
             const link = "https://www.indiegogo.com/projects/reliq-the-world-s-first-hybrid-control-surface--2#/"          
             cy.get('#project_ks_url').click()     
-            cy.get('#project_ks_url').invoke('val', link).trigger('input').type('{ctrl}')
-            cy.wait(8000)
+            cy.get('#project_ks_url').invoke('val', link).trigger('input').type('{ctrl}').wait(8000)
             cy.get('#confirmation__info > p').scrollIntoView().wait(2000)
             cy.get('#confirmation__wrap > .confirmation__buttons-wrap > #conf-button__yes').click().wait(1000)
                

@@ -8,11 +8,12 @@ class Dashboard{
         cy.get('#user_type').select('All Project Types',{scrollBehavior:false,force:true}).wait(4000)
         // Search and Reset
         cy.get('#search').type('Testing Project',{scrollBehavior:false}).wait(2000)
-        cy.get('.basis-1\\/12 > :nth-child(2) > .flex-shrink-0').realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false}).realMouseMove(100,100)
-        cy.wait(3000)
+        cy.get('.basis-1\\/12 > :nth-child(2) > .flex-shrink-0').realHover({scrollBehavior:false})
+        .wait(1000).click({scrollBehavior:false}).realMouseMove(100,100).wait(3000)
         cy.get('.ml-2').click().wait(2000)
         cy.get('#search').type('syed@launchboom.com',{scrollBehavior:false}).wait(2000)
-        cy.get('.basis-1\\/12 > :nth-child(2) > .flex-shrink-0').realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false}).realMouseMove(100,100).wait(2000)
+        cy.get('.basis-1\\/12 > :nth-child(2) > .flex-shrink-0').realHover({scrollBehavior:false})
+        .wait(1000).click({scrollBehavior:false}).realMouseMove(100,100).wait(2000)
         cy.get(':nth-child(15) > :nth-child(1)').scrollIntoView({duration:4000}).wait(1000)
         cy.get('.ml-2').click({scrollBehavior:false,force:true}).wait(3000)
         // Create Project
@@ -72,8 +73,8 @@ class Dashboard{
     RefreshData()
     {
         cy.get('#search').type('Testing Project',{scrollBehavior:false}).wait(2000)
-        cy.get('.basis-1\\/12 > :nth-child(2) > .flex-shrink-0').realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false}).realMouseMove(100,100)
-        cy.wait(3000)
+        cy.get('.basis-1\\/12 > :nth-child(2) > .flex-shrink-0').realHover({scrollBehavior:false})
+        .wait(1000).click({scrollBehavior:false}).realMouseMove(100,100).wait(3000)
         cy.get('.text-right').click({scrollBehavior:false}).wait(500)
         cy.get(':nth-child(1) > .text-right > .relative > .absolute > .rounded-md').scrollIntoView().wait(2000)
         cy.contains('Refresh Data').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(200,200).wait(3000)

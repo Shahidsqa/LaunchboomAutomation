@@ -3,8 +3,8 @@ class Users{
 
     OpenUsers()
     {
-        cy.get(':nth-child(3) > .top-nav-link > .nav-link').realHover().wait(2000).click().realMouseMove(200,200)
-        cy.wait(3000)
+        cy.get(':nth-child(3) > .top-nav-link > .nav-link').realHover().wait(2000)
+        .click().realMouseMove(200,200).wait(3000)
 
     }
     CreateProjOwner()
@@ -18,8 +18,7 @@ class Users{
         cy.get('#confirm-password').type('Asdf@1234',{scrollBehavior:false}).wait(1000)
         cy.get('.bkg-ylb').realHover().wait(1000).click().realMouseMove(100,100).wait(3000)
         cy.get(':nth-child(4) > .form-checkbox').scrollIntoView().click().wait(2000)
-        cy.get('.bkg-ylb').realHover().wait(1000).click().realMouseMove(100,100)
-        cy.wait(2000)
+        cy.get('.bkg-ylb').realHover().wait(1000).click().realMouseMove(100,100).wait(2000)
         cy.get('#password').type('Asdf@1234',{scrollBehavior:false}).wait(2000)
         cy.get('.bkg-ylb').realHover().wait(1000).click().wait(3000)
 
@@ -35,8 +34,7 @@ class Users{
         cy.get('#confirm-password').type('Asdf@1234',{scrollBehavior:false}).wait(1000)
         cy.get('.bkg-ylb').realHover().wait(1000).click().realMouseMove(100,100).wait(3000)
         cy.get(':nth-child(5) > .form-checkbox').scrollIntoView().click().wait(2000)
-        cy.get('.bkg-ylb').realHover().wait(1000).click().realMouseMove(100,100)
-        cy.wait(2000)
+        cy.get('.bkg-ylb').realHover().wait(1000).click().realMouseMove(100,100).wait(2000)
         cy.get('#password').type('Asdf@1234',{scrollBehavior:false}).wait(2000)
         cy.get('.bkg-ylb').realHover().wait(1000).click().wait(3000)
     }
@@ -51,8 +49,7 @@ class Users{
         cy.get('#confirm-password').type('Asdf@1234',{scrollBehavior:false}).wait(1000)
         cy.get('.bkg-ylb').realHover().wait(1000).click().realMouseMove(100,100).wait(3000)
         cy.get(':nth-child(6) > .form-checkbox').scrollIntoView().click().wait(2000)
-        cy.get('.bkg-ylb').realHover().wait(1000).click().realMouseMove(100,100)
-        cy.wait(2000)
+        cy.get('.bkg-ylb').realHover().wait(1000).click().realMouseMove(100,100).wait(2000)
         cy.get('#password').type('Asdf@1234',{scrollBehavior:false}).wait(2000)
         cy.get('.bkg-ylb').realHover().wait(1000).click().wait(3000)
     }
@@ -78,8 +75,8 @@ class Users{
     EditUser()
     {
         cy.get('[data-role="Project Owner"]').click({scrollBehavior:false}).wait(3000)
-        cy.get(':nth-child(1) > .px-6 > .text-indigo-600 > .inline-block > path').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false})
-        cy.wait(3000)
+        cy.get(':nth-child(1) > .px-6 > .text-indigo-600 > .inline-block > path').
+        realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).wait(3000)
         cy.get('#name').type('Test',{scrollBehavior:false}).wait(2000)
         cy.get('.bkg-ylb').realHover().wait(1000).click().wait(500)
         cy.get('[data-role="Project Owner"]').click({scrollBehavior:false}).wait(3000)
@@ -88,8 +85,8 @@ class Users{
     DeleteProjUser()
     {
         cy.get('[data-role="Project User"]').click({scrollBehavior:false}).wait(3000)
-        cy.get(':nth-child(1) > .px-6 > #deleteForm > .text-red-700 > .inline-block > path').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false})
-        cy.wait(2000)
+        cy.get(':nth-child(1) > .px-6 > #deleteForm > .text-red-700 > .inline-block > path')
+        .realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).wait(2000)
         cy.get('.swal2-confirm').realHover().wait(2000).click()
     
     }

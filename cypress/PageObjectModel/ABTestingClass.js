@@ -5,8 +5,7 @@ class ABTesting{
     {
         cy.get('.divide-y > :nth-child(1) > :nth-child(1) > a').click({scrollBehavior:false}).wait(2000)
         cy.get('.projects-name').realHover({scrollBehavior:false}).wait(2000)
-        cy.contains('A/B Testing').realHover().wait(2000).click()
-        cy.wait(3000)
+        cy.contains('A/B Testing').realHover().wait(2000).click().wait(3000)
     }
     MakeLPvariants()
     {
@@ -28,8 +27,7 @@ class ABTesting{
     }
     PreviousTests()
     {
-        cy.get('[data-tabs-target="#configuration"]').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false})
-        cy.wait(3000)
+        cy.get('[data-tabs-target="#configuration"]').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).wait(3000)
         cy.get(':nth-child(1) > :nth-child(5) > .bg-white').click().wait(5000)
         cy.get(':nth-child(3) > .bg-white').realHover().wait(3000).click()
 
