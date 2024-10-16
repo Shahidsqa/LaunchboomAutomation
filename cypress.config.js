@@ -6,6 +6,7 @@ module.exports = defineConfig({
   e2e: {
     watchForFileChanges:false,
     chromeWebSecurity: false,
+    defaultCommandTimeout:10000,
     pageLoadTimeout:120000,
     setupNodeEvents(on, config) {
 

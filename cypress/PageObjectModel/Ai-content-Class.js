@@ -70,7 +70,7 @@ class AiContent{
     cy.get('#uniqueSellingProposition').type('This kitchen composter is a revolutionary device designed for the eco-conscious consumer looking to make a significant impact on their waste footprint without sacrificing convenience or space. It stands out by being the first of its kind to break down bio',{scrollBehavior:false}).wait(1000)
     cy.get('.ml-2').click().wait(1000)
     cy.get('#submit-btn').scrollIntoView().wait(2000)
-    cy.get('#submit-btn').realHover().wait(1000).click().realMouseMove(100,100).wait.wait(60000)
+    cy.get('#submit-btn').realHover().wait(1000).click().realMouseMove(100,100).wait(60000)
   }
   AiAdsContent()
   {
@@ -99,6 +99,6 @@ class AiContent{
     cy.get('.projects-name').realHover({scrollBehavior:false}).wait(2000)
     cy.contains('Funnel Builder').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).wait(4000)
   }
-  
+
 }
 export default AiContent
