@@ -7,7 +7,7 @@ class LinkBuilder{
             .wait(1000).click({scrollBehavior:false}).realMouseMove(100,100).wait(2000)
             cy.get('.project-row > :nth-child(1) > a').click({scrollBehavior:false}).wait(2000)
             cy.get('.projects-name').realHover({scrollBehavior:false}).wait(2000)
-            cy.contains('Link Builder').realHover().wait(2000).click().wait(3000)
+            cy.contains('Link Builder').realHover().wait(2000).click({force:true}).wait(3000)
     }
     CreateLink()
     {

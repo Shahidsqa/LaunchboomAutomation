@@ -3,7 +3,7 @@ class AiContent{
     Login()
     {
         cy.visit('https://release.launchboom.com/admin/app/login')
-        cy.wait(2000)
+        cy.wait(4000)
         cy.get('#email').type('syed@launchboom.com')
         cy.wait(1000)
         cy.get('#password').type('12345678')
@@ -23,7 +23,7 @@ class AiContent{
   {
       cy.get('.divide-y > :nth-child(1) > :nth-child(1) > a').click({scrollBehavior:false}).wait(2000)
       cy.get('.projects-name').realHover({scrollBehavior:false}).wait(2000)
-      cy.contains('AI Generator').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).wait(3000)
+      cy.contains('AI Generator').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false,force:true}).wait(3000)
   }
   SelectCategory()
   {
@@ -85,7 +85,7 @@ class AiContent{
   AiAdsContentAgain()
   {
     cy.get('.projects-name').realHover({scrollBehavior:false}).wait(2000)
-    cy.contains('AI Generator').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).wait(2000)
+    cy.contains('AI Generator').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false,force:true}).wait(2000)
     cy.get('.top-steps-wrap > ul > :nth-child(2)').click({scrollBehavior:false}).wait(2000)
     cy.get('.top-steps-wrap > ul > :nth-child(3)').click({scrollBehavior:false}).wait(2000)
     cy.get('.top-steps-wrap > ul > :nth-child(4)').click({scrollBehavior:false}).wait(2000)
@@ -97,7 +97,7 @@ class AiContent{
     cy.get('.swal2-cancel').realHover().wait(500).click().wait(60000)
     cy.get('.in-active').click({scrollBehavior:false}).wait(3000)
     cy.get('.projects-name').realHover({scrollBehavior:false}).wait(2000)
-    cy.contains('Funnel Builder').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).wait(4000)
+    cy.contains('Funnel Builder').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false,force:true}).wait(4000)
   }
 
 }
