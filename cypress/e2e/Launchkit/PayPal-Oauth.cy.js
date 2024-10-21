@@ -1,17 +1,14 @@
+import PaypalOauth from "../../PageObjectModel/PaypalOauthClass"
 import AiContent from "../../PageObjectModel/Ai-content-Class"
-import Dashboard from "../../PageObjectModel/DashboardClass"
 // enable intelligence
 ///<reference types = "cypress"/>
 // returning false here prevents cypress from failing tests
 Cypress.on("uncaught:exception",()=>false)
-it('Dashboard',function(){
+it('PayPal Oauth',function(){
     cy.viewport(1200,600)
-    const obj1 = new Dashboard()
+    const obj1 = new PaypalOauth()
     const obj2 = new AiContent()
     obj2.Login()
-   // obj1.ProjectTypes()
-   // obj1.OpenModules()
-    obj1.StatusMessages()
-    obj1.RefreshData()
-    
+    obj2.CreateProject()
+    obj1.Oauth()
 })

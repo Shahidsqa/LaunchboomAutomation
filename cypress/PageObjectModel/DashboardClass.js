@@ -69,28 +69,18 @@ class Dashboard{
         cy.go(-1).wait(3000)
           
     }
-
-    RefreshData()
-    {
-        cy.get('#search').type('Testing Project',{scrollBehavior:false}).wait(2000)
-        cy.get('.basis-1\\/12 > :nth-child(2) > .flex-shrink-0').realHover({scrollBehavior:false})
-        .wait(1000).click({scrollBehavior:false}).realMouseMove(100,100).wait(3000)
-        cy.get('.text-right').click({scrollBehavior:false}).wait(500)
-        cy.get(':nth-child(1) > .text-right > .relative > .absolute > .rounded-md').scrollIntoView().wait(2000)
-        cy.contains('Refresh Data').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(200,200).wait(3000)
-        cy.get(':nth-child(3) > :nth-child(2) > .bg-blue-500').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(100,100)
-        cy.get(':nth-child(3) > :nth-child(1) > .text-xl').scrollIntoView().wait(14000)
-        cy.go(-1).wait(3000)
-}
  
     StatusMessages()
     {
         // Disable Facebook/Mailchimp and check status
+        cy.get('#search').type('Testing Project',{scrollBehavior:false}).wait(2000)
+        cy.get('.basis-1\\/12 > :nth-child(2) > .flex-shrink-0').realHover({scrollBehavior:false})
+        .wait(1000).click({scrollBehavior:false}).realMouseMove(100,100).wait(3000)
         cy.get('.project-row > :nth-child(1) > a').click({scrollBehavior:false}).wait(2000)
         cy.get('[data-tabs-target="#admin"]').click({scrollBehavior:false}).wait(2000)
         cy.get('.py-4 > :nth-child(2) > :nth-child(12)').scrollIntoView().wait(2000)
         cy.get(':nth-child(12) > :nth-child(2) > :nth-child(2) > .mt-2 > .toggle').click({scrollBehavior:false}).wait(2000)
-        cy.get(':nth-child(3) > .mt-2 > .toggle').click({scrollBehavior:false}).wait(2000)
+        cy.get(':nth-child(12) > :nth-child(2) > :nth-child(3) > .mt-2 > .toggle').click({scrollBehavior:false}).wait(2000)
         cy.get('#admin').scrollIntoView().wait(2000)
         cy.get('#admin > .py-4 > .mb-8 > :nth-child(2) > .bkg-ylb').realHover({scrollBehavior:false}).click({scrollBehavior:false}).realMouseMove(100,100).wait(3000)
         cy.get('.h-full > :nth-child(1) > :nth-child(2)').click().wait(3000)
@@ -100,12 +90,13 @@ class Dashboard{
         cy.get(':nth-child(1) > .text-right > .relative > .absolute > .rounded-md').scrollIntoView().wait(2000)
         cy.contains('Status Messages').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(200,200).wait(6000)
         cy.go(-1).wait(3000)
+
         // Enable Facebook/Mailchimp and check status again
            cy.get('.project-row > :nth-child(1) > a').click({scrollBehavior:false}).wait(2000)
            cy.get('[data-tabs-target="#admin"]').click({scrollBehavior:false}).wait(2000)
            cy.get('.py-4 > :nth-child(2) > :nth-child(12)').scrollIntoView().wait(2000)
            cy.get(':nth-child(12) > :nth-child(2) > :nth-child(2) > .mt-2 > .toggle').click({scrollBehavior:false}).wait(2000)
-           cy.get(':nth-child(3) > .mt-2 > .toggle').click({scrollBehavior:false}).wait(2000)
+           cy.get(':nth-child(12) > :nth-child(2) > :nth-child(3) > .mt-2 > .toggle').click({scrollBehavior:false}).wait(2000)
            cy.get('#admin').scrollIntoView().wait(2000)
            cy.get('#admin > .py-4 > .mb-8 > :nth-child(2) > .bkg-ylb').realHover({scrollBehavior:false}).click({scrollBehavior:false}).realMouseMove(100,100).wait(3000)
            cy.get('.h-full > :nth-child(1) > :nth-child(2)').click().wait(3000)
@@ -114,8 +105,18 @@ class Dashboard{
            cy.get('.text-right').click({scrollBehavior:false}).wait(500)
            cy.get(':nth-child(1) > .text-right > .relative > .absolute > .rounded-md').scrollIntoView().wait(2000)
            cy.contains('Status Messages').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(200,200).wait(6000)
-           cy.go(-2).wait(2000)
-           cy.get('.ml-2').click({scrollBehavior:false}).wait(1000)
+           cy.go(-2).wait(3000)
+    }
+
+    RefreshData()
+    {
+        cy.get('.basis-1\\/12 > :nth-child(2) > .flex-shrink-0').realHover({scrollBehavior:false})
+         .wait(1000).click({scrollBehavior:false}).realMouseMove(100,100).wait(3000)
+        cy.get('.text-right').click({scrollBehavior:false}).wait(500)
+        cy.get(':nth-child(1) > .text-right > .relative > .absolute > .rounded-md').scrollIntoView().wait(2000)
+        cy.contains('Refresh Data').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(200,200).wait(3000)
+        cy.get(':nth-child(3) > :nth-child(2) > .bg-blue-500').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(100,100)
+        cy.get(':nth-child(3) > :nth-child(1) > .text-xl').scrollIntoView()
     }
 
     

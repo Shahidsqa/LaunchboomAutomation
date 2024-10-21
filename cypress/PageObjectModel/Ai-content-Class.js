@@ -3,7 +3,7 @@ class AiContent{
     Login()
     {
         cy.visit('https://release.launchboom.com/admin/app/login')
-        cy.wait(4000)
+        cy.wait(3000)
         cy.get('#email').type('syed@launchboom.com')
         cy.wait(1000)
         cy.get('#password').type('12345678')
@@ -17,7 +17,7 @@ class AiContent{
     const random = 'Project'+Math.floor(Math.random() * (999 - 100 + 1))
     cy.get('#name').type(random,{scrollBehavior:false}).wait(2000)
     cy.get('#overview > .py-4 > .mb-8 > :nth-child(2) > .bkg-ylb').realHover({scrollBehavior:false}).click({scrollBehavior:false}).realMouseMove(100,100)
-    cy.wait(2000)
+    cy.wait(3000)
   }
   OpenAiGen()
   {
