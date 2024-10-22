@@ -66,7 +66,7 @@ class funnelTypes{
     
     cy.wait(4000)
     cy.get('.btn').scrollIntoView().wait(1000)
-    cy.get('.btn').realHover().wait(2000).click().realMouseMove(100,100).wait(6000)
+    cy.get('.btn').realHover().wait(2000).click().realMouseMove(100,100).wait(7000)
     cy.get('#address-element').should('be.visible')
     cy.frameLoaded("[title='Secure address input frame']")
     cy.get("[title='Secure address input frame']").scrollIntoView().wait(1000)
@@ -83,7 +83,7 @@ class funnelTypes{
     cy.iframe("[title='Secure payment input frame']").find('#Field-expiryInput').type('04 / 27').wait(1000)
     cy.iframe("[title='Secure payment input frame']").find('#Field-cvcInput').type('111').wait(2000)
     cy.get('#card-button').click().wait(6000)
-    cy.url().should('include','https://test.launchboomer.com/reserved')
+    cy.url().should('include','/reserved')
   }
 
   optoutFunnel(){
@@ -170,7 +170,7 @@ class funnelTypes{
     
     cy.wait(4000)
     cy.get('#reservation-btn').scrollIntoView().wait(1000)
-    cy.get('#reservation-btn').realHover().wait(2000).click()
+    cy.get('#reservation-btn').realHover().wait(2000).click().wait(6000)
   }
 }
 export default funnelTypes

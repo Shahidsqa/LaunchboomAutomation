@@ -23,9 +23,16 @@ class PostCampaign{
          {
             cy.get(':nth-child(2) > .block > li').scrollIntoView().wait(2000)
             cy.get('.file-input').invoke('css','display','block')
-            cy.get('.file-input').selectFile("C:\\Users\\At\\Downloads\\Indiegogo.csv").wait(4000)
+            // cy.fixture('Indiegogo.csv', 'binary').then(fileContent => {
+            //   cy.get('.file-input').selectFile({
+            //     contents: Cypress.Blob.binaryStringToBlob(fileContent),
+            //     fileName: 'Indiegogo.csv',
+            //     mimeType: 'text/csv'
+            //   });
+            // });
+            cy.get('.file-input').selectFile("C:\\\Users\\\At\\\Desktop\\\Indiegogo.csv").wait(4000)
             cy.get('#file-name-wrap > p').scrollIntoView().wait(2000)
-            cy.get('#file-upload-button').realHover().wait(2000).click().realMouseMove(100,100)
+            cy.get('#file-upload-button').realHover({force:true}).wait(1000).click({force:true}).realMouseMove(100,100)
          }
 
            

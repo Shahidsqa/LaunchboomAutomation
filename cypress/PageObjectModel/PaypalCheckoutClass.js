@@ -72,7 +72,7 @@ class PaypalCheckout{
           cy.frameLoaded("[title='paypal_card_cvv_field']")
           cy.iframe("[title='paypal_card_cvv_field']").find("[name='cvv']").type('111',{scrollBehavior:false}).wait(2000)
           cy.get('#card-field-submit-button').click().wait(6000)
-          cy.url().should('include','https://test.launchboomer.com/reserved')
+          cy.url().should('include','/reserved')
         
 
 

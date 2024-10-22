@@ -11,23 +11,50 @@ class LinkBuilder{
     }
     CreateLink()
     {
+        // Create link without link name
+        cy.get('.bkg-ylb').realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false}).realMouseMove(100,100)
+        cy.get('.bold').scrollIntoView().wait(3000)
         // Create Link with wrong format
         cy.get('#unique_identifier').type('abLink@123',{scrollBehavior:false}).wait(2000)
-        cy.get('#category_id').select('Instagram',{scrollBehavior:false,force:true}).wait(2000)
-        cy.get('#redirect_type').select('Checkout',{scrollBehavior:false,force:true}).wait(2000)
-        cy.get('.bkg-ylb').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(100,100)
+        cy.get('#category_id').then($select => {
+            const options = $select.find('option')
+            const randomIndex = Math.floor(Math.random() * options.length)
+            const randomValue = options[randomIndex].value;
+            cy.get('#category_id').select(randomValue,{scrollBehavior:false,force:true})
+          })
+          cy.wait(2000)
+        cy.get('#redirect_type').then($select => {
+            const options = $select.find('option')
+            const randomIndex = Math.floor(Math.random() * options.length)
+            const randomValue = options[randomIndex].value;
+            cy.get('#redirect_type').select(randomValue,{scrollBehavior:false,force:true})
+          })
+          cy.wait(2000)
+        cy.get('.bkg-ylb').realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false}).realMouseMove(100,100)
         cy.get('.bold').scrollIntoView().wait(3000)
 
-        // Create link with valid format
+        // Create link with valid format but duplicate link
         cy.get('#unique_identifier').clear({scrollBehavior:false}).wait(1000).type('abLink123',{scrollBehavior:false}).wait(2000)
-        cy.get('.bkg-ylb').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(100,100).wait(3000)
+        cy.get('.bkg-ylb').realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false}).realMouseMove(100,100).wait(3000)
 
         // Create link with no duplication
         const random = 'CustomLink'+Math.floor(Math.random() * (999 - 100 + 1))
         cy.get('#unique_identifier').clear({scrollBehavior:false}).wait(1000).type(random,{scrollBehavior:false}).wait(2000)
-        cy.get('#category_id').select('Twitter',{scrollBehavior:false,force:true}).wait(2000)
-        cy.get('#redirect_type').select('Checkout',{scrollBehavior:false,force:true}).wait(2000)
-        cy.get('.bkg-ylb').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(100,100).wait(5000)
+        cy.get('#category_id').then($select => {
+            const options = $select.find('option')
+            const randomIndex = Math.floor(Math.random() * options.length)
+            const randomValue = options[randomIndex].value;
+            cy.get('#category_id').select(randomValue,{scrollBehavior:false,force:true})
+          })
+          cy.wait(2000)
+        cy.get('#redirect_type').then($select => {
+            const options = $select.find('option')
+            const randomIndex = Math.floor(Math.random() * options.length)
+            const randomValue = options[randomIndex].value;
+            cy.get('#redirect_type').select(randomValue,{scrollBehavior:false,force:true})
+          })
+          cy.wait(2000)
+        cy.get('.bkg-ylb').realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false}).realMouseMove(100,100).wait(5000)
 
     }
 
