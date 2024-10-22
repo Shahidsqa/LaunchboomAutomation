@@ -30,7 +30,9 @@ class PostCampaign{
             //     mimeType: 'text/csv'
             //   });
             // });
-            cy.get('.file-input').selectFile("C:\\\Users\\\At\\\Desktop\\\Indiegogo.csv").wait(4000)
+            const path = require('path');
+            const filePath = path.join('cypress', 'fixtures', 'Indiegogo.csv')
+            cy.get('.file-input').selectFile(filePath).wait(4000)
             cy.get('#file-name-wrap > p').scrollIntoView().wait(2000)
             cy.get('#file-upload-button').realHover({force:true}).wait(1000).click({force:true}).realMouseMove(100,100)
          }

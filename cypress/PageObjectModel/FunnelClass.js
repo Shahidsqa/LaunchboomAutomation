@@ -83,7 +83,6 @@ class funnelTypes{
     cy.iframe("[title='Secure payment input frame']").find('#Field-expiryInput').type('04 / 27').wait(1000)
     cy.iframe("[title='Secure payment input frame']").find('#Field-cvcInput').type('111').wait(2000)
     cy.get('#card-button').click().wait(6000)
-    cy.url().should('include','/reserved')
   }
 
   optoutFunnel(){

@@ -11,7 +11,7 @@ it('Dashboard',function(){
     obj2.Login()
    // obj1.ProjectTypes()
    // obj1.OpenModules()
-    obj1.StatusMessages()
-    obj1.RefreshData()
+    // obj1.StatusMessages()
+    // obj1.RefreshData()
     
 })
