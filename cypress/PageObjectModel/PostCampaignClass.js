@@ -23,13 +23,6 @@ class PostCampaign{
          {
             cy.get(':nth-child(2) > .block > li').scrollIntoView().wait(2000)
             cy.get('.file-input').invoke('css','display','block')
-            // cy.fixture('Indiegogo.csv', 'binary').then(fileContent => {
-            //   cy.get('.file-input').selectFile({
-            //     contents: Cypress.Blob.binaryStringToBlob(fileContent),
-            //     fileName: 'Indiegogo.csv',
-            //     mimeType: 'text/csv'
-            //   });
-            // });
             const path = require('path');
             const filePath = path.join('cypress', 'fixtures', 'Indiegogo.csv')
             cy.get('.file-input').selectFile(filePath).wait(4000)

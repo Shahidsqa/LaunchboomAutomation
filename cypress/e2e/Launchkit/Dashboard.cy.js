@@ -9,9 +9,9 @@ it('Dashboard',function(){
     const obj1 = new Dashboard()
     const obj2 = new AiContent()
     obj2.Login()
-   // obj1.ProjectTypes()
-   // obj1.OpenModules()
-    // obj1.StatusMessages()
-    // obj1.RefreshData()
+    obj1.ProjectTypes()
+    obj1.OpenModules()
+    obj1.StatusMessages()
+    obj1.RefreshData()
     
 })
