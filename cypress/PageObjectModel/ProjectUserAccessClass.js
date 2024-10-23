@@ -58,7 +58,7 @@ class ProjUserAccess{
         cy.get(':nth-child(2) > .text-right').click().wait(3000)
         cy.get(':nth-child(2) > .text-right > .relative > .absolute > .rounded-md > [title="delete this project"]')
         .realHover({force:true}).wait(2000).click({force:true}).wait(3000)
-        cy.get('.swal2-confirm').realHover().wait(2000).click()
+        cy.get('.swal2-confirm').realHover().wait(2000).click().wait(5000)
     }
 }
 export default ProjUserAccess

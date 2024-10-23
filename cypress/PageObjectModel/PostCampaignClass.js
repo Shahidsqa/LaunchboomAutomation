@@ -27,7 +27,7 @@ class PostCampaign{
             const filePath = path.join('cypress', 'fixtures', 'Indiegogo.csv')
             cy.get('.file-input').selectFile(filePath).wait(4000)
             cy.get('#file-name-wrap > p').scrollIntoView().wait(2000)
-            cy.get('#file-upload-button').realHover({force:true}).wait(1000).click({force:true}).realMouseMove(100,100)
+            cy.get('#file-upload-button').realHover({force:true}).wait(1000).click({force:true}).realMouseMove(100,100).wait(5000)
          }
 
            

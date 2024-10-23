@@ -73,6 +73,7 @@ class audience{
         cy.get(':nth-child(9) > .relative').click().wait(2000)
         cy.get(':nth-child(10) > .relative').click().wait(2000)
         cy.get(':nth-child(11) > .relative').click().wait(2000)
+        cy.wait(5000)
 
     }
 }

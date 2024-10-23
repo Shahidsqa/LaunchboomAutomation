@@ -97,7 +97,7 @@ class AiContent{
     cy.get('.swal2-cancel').realHover().wait(500).click().wait(60000)
     cy.get('.in-active').click({scrollBehavior:false}).wait(3000)
     cy.get('.projects-name').realHover({scrollBehavior:false}).wait(2000)
-    cy.contains('Funnel Builder').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false,force:true}).wait(4000)
+    cy.contains('Funnel Builder').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false,force:true}).wait(5000)
   }
 
 }

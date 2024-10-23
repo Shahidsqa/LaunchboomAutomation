@@ -60,17 +60,17 @@ class LinkBuilder{
 
     CheckDatePicker()
     {
-       cy.get('#reportrange').scrollIntoView().wait(5000).click().wait(3000)
-       cy.get('[data-range-key="Last 2 Weeks"]').realHover().wait(2000).click().realMouseMove(300,300).wait(5000)
-       cy.get('#reportrange').click().wait(3000)
-       cy.get('[data-range-key="Last Month"]').realHover().wait(2000).click().realMouseMove(300,300).wait(5000)
-       cy.get('#reportrange').click().wait(3000)
-       cy.get('.prev').realHover().wait(2000).click().realMouseMove(100,100).wait(3000)
+       cy.get('#reportrange').scrollIntoView().wait(3000).click().wait(2000)
+       cy.get('[data-range-key="Last 2 Weeks"]').realHover().wait(1000).click().realMouseMove(300,300).wait(7000)
+       cy.get('#reportrange').click().wait(2000)
+       cy.get('[data-range-key="Last Month"]').realHover().wait(2000).click().realMouseMove(300,300).wait(7000)
+       cy.get('#reportrange').click().wait(2000)
+       cy.get('.prev').realHover().wait(1000).click().realMouseMove(100,100).wait(2000)
        cy.get('.left > .calendar-table > .table-condensed > tbody > :nth-child(3) > [data-title="r2c4"]')
-       .realHover().wait(2000).click().realMouseMove(500,500).wait(3000)
+       .realHover().wait(1000).click().realMouseMove(500,500).wait(2000)
        cy.get('.right > .calendar-table > .table-condensed > tbody > :nth-child(6) > [data-title="r5c1"]')
-       .realHover().wait(2000).click().realMouseMove(500,500).wait(3000)
-       cy.get('.applyBtn').click().wait(8000)
+       .realHover().wait(1000).click().realMouseMove(500,500).wait(2000)
+       cy.get('.applyBtn').click().wait(9000)
     }
 
     CopyLink()
@@ -84,6 +84,7 @@ class LinkBuilder{
             .then((copiedLink) => {
             cy.visit(copiedLink)
           })
+          cy.wait(5000)
     }
     
 }

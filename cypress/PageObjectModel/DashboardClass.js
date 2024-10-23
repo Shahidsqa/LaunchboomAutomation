@@ -116,7 +116,7 @@ class Dashboard{
         cy.get(':nth-child(1) > .text-right > .relative > .absolute > .rounded-md').scrollIntoView().wait(2000)
         cy.contains('Refresh Data').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(200,200).wait(3000)
         cy.get(':nth-child(3) > :nth-child(2) > .bg-blue-500').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(100,100)
-        cy.get(':nth-child(3) > :nth-child(1) > .text-xl').scrollIntoView()
+        cy.get(':nth-child(3) > :nth-child(1) > .text-xl').scrollIntoView().wait(5000)
     }
 
     

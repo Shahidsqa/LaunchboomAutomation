@@ -87,7 +87,7 @@ class Users{
         cy.get('[data-role="Project User"]').click({scrollBehavior:false}).wait(3000)
         cy.get(':nth-child(1) > .px-6 > #deleteForm > .text-red-700 > .inline-block > path')
         .realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).wait(2000)
-        cy.get('.swal2-confirm').realHover().wait(2000).click()
+        cy.get('.swal2-confirm').realHover().wait(2000).click().wait(5000)
     
     }
 }
