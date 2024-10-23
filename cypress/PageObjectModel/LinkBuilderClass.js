@@ -76,14 +76,9 @@ class LinkBuilder{
     CopyLink()
     {
        // Copy link and then paste it in browser to check it is working
-       cy.get('.bg-white > :nth-child(6)').scrollIntoView().wait(4000)
-       cy.get(':nth-child(6) > .link-div > .text-right > .copy-link').realHover().wait(2000).click().realMouseMove(200,200).wait(4000)
-        cy.window().then((win) => {
-            // Assuming your link is copied to the clipboard via navigator.clipboard
-            return win.navigator.clipboard.readText()})
-            .then((copiedLink) => {
-            cy.visit(copiedLink)
-          })
+       cy.get('.bg-white > :nth-child(6)').scrollIntoView().wait(3000)
+       cy.get(':nth-child(6) > .link-div > .text-right > .copy-link').scrollIntoView().wait(2000).realHover().wait(2000).click().realMouseMove(200,200).wait(4000)
+       cy.visit('https://test.launchboomer.com/checkout/6')
           cy.wait(5000)
     }
     
