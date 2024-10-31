@@ -21,6 +21,6 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v3
         with:
-          name: cypress-artifacts
-          path: cypress/screenshots
+        name: cypress-artifacts
+        path: cypress/screenshots
         
