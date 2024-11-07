@@ -16,14 +16,15 @@ class AiContent{
     cy.get('.bkg-ylb').realHover({scrollBehavior:false}).click({scrollBehavior:false}).wait(2000)
     const random = 'Project'+Math.floor(Math.random() * (999 - 100 + 1))
     cy.get('#name').type(random,{scrollBehavior:false}).wait(2000)
-    cy.get('#overview > .py-4 > .mb-8 > :nth-child(2) > .bkg-ylb').realHover({scrollBehavior:false}).click({scrollBehavior:false}).realMouseMove(100,100)
-    cy.wait(3000)
+    cy.get('#overview > .py-4 > .mb-8 > :nth-child(2) > .bkg-ylb').realHover({scrollBehavior:false})
+    .click({scrollBehavior:false}).realMouseMove(100,100).wait(3000)
   }
   OpenAiGen()
   {
       cy.get('.divide-y > :nth-child(1) > :nth-child(1) > a').click({scrollBehavior:false}).wait(2000)
       cy.get('.projects-name').realHover({scrollBehavior:false}).wait(2000)
-      cy.contains('AI Generator').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false,force:true}).wait(3000)
+      cy.contains('AI Generator').realHover({scrollBehavior:false}).wait(2000)
+      .click({scrollBehavior:false,force:true}).wait(3000)
   }
   SelectCategory()
   {
@@ -70,7 +71,8 @@ class AiContent{
     cy.get('#uniqueSellingProposition').type('This kitchen composter is a revolutionary device designed for the eco-conscious consumer looking to make a significant impact on their waste footprint without sacrificing convenience or space. It stands out by being the first of its kind to break down bio',{scrollBehavior:false}).wait(1000)
     cy.get('.ml-2').click().wait(1000)
     cy.get('#submit-btn').scrollIntoView().wait(2000)
-    cy.get('#submit-btn').realHover().wait(1000).click().realMouseMove(100,100).wait(60000)
+    cy.get('#submit-btn').realHover().wait(1000).click().realMouseMove(100,100).wait(45000)
+    
   }
   AiAdsContent()
   {
@@ -94,10 +96,12 @@ class AiContent{
     cy.get('.ml-2').click().wait(1000)
     cy.get('#submit-btn').scrollIntoView().wait(2000)
     cy.get('#submit-btn').realHover().wait(1000).click().realMouseMove(100,100).wait(3000)
-    cy.get('.swal2-cancel').realHover().wait(500).click().wait(60000)
+    cy.get('.swal2-cancel').realHover().wait(500).click().wait(45000)
     cy.get('.in-active').click({scrollBehavior:false}).wait(3000)
     cy.get('.projects-name').realHover({scrollBehavior:false}).wait(2000)
-    cy.contains('Funnel Builder').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false,force:true}).wait(5000)
+    cy.contains('Funnel Builder').realHover({scrollBehavior:false}).wait(2000)
+    .click({scrollBehavior:false,force:true}).wait(5000)
+    
   }
 
 }
