@@ -17,7 +17,4 @@ jobs:
       - name: Archive screenshots and videos (if any)
         if: always()
         uses: actions/upload-artifact@v3
-        with:
-        name: cypress-artifacts
-        path: cypress/screenshots
         
