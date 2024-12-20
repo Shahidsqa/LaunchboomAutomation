@@ -10,7 +10,7 @@ class PaypalOauth{
         .realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(100,100).wait(3000)
         cy.get('#email').type('sb-zann330851954@business.example.com').wait(2000)
         cy.get('#btnNext').realHover({scrollBehavior:false}).click({scrollBehavior:false,force:true}).realMouseMove(100,100).wait(2000)
-        cy.get('#password').type('2,^e>GFh',{scrollBehavior:false}).wait(2000)
+        cy.get('#password').type('12345678',{scrollBehavior:false}).wait(2000)
         cy.get('#btnLogin').realHover({scrollBehavior:false}).click({scrollBehavior:false,force:true}).realMouseMove(100,100).wait(5000)
     }
 }
