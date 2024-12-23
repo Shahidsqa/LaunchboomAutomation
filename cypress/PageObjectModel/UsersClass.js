@@ -3,8 +3,8 @@ class Users{
 
     OpenUsers()
     {
-        cy.get(':nth-child(3) > .top-nav-link > .nav-link').realHover().wait(2000)
-        .click().realMouseMove(200,200).wait(3000)
+        cy.get('.h-full > :nth-child(1) > :nth-child(2)').realHover().wait(2000)
+        cy.contains('Users Management').realHover().wait(1000).click().wait(3000)
 
     }
     CreateProjOwner()
