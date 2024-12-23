@@ -5,7 +5,8 @@ class PostCampaign{
           {
             cy.get('.divide-y > :nth-child(1) > :nth-child(1) > a').click({scrollBehavior:false}).wait(2000)
             cy.get('.projects-name').realHover({scrollBehavior:false}).wait(2000)
-            cy.contains('Post Campaign').realHover().wait(2000).click({force:true}).wait(3000)
+            cy.contains('Overview').scrollIntoView().wait(1000)
+            cy.contains('Post Campaign').realHover({scrollBehavior:false}).wait(2000).click({force:true}).wait(3000)
           }
 
           EnterProjectLink()
