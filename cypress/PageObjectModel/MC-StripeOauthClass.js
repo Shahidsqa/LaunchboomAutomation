@@ -19,7 +19,7 @@ class McStripeOauth{
 
     stripeOauth()
    {
-       cy.get('[data-tabs-target="#payment"]').click({scrollBehavior:false}).wait(2000)
+       cy.get('[data-tabs-target="#payment"]').click({scrollBehavior:false}).wait(3000)
        cy.get('#stripe-settings > .flex').scrollIntoView().wait(2000)
        cy.get('#stripe-settings > .flex > :nth-child(2) > [style="align-self:flex-end;"] > .mc-btn-wrap > .bg-white')
        .realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false}).realMouseMove(100,100).wait(3000)
