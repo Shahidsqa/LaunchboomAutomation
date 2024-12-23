@@ -3,7 +3,8 @@ class audience{
  
     PreCampaignAudiences()
     {
-        cy.get(':nth-child(5) > .top-nav-link > .nav-link').realHover().wait(2000).click().realMouseMove(50,50).wait(2000)
+        cy.get('.h-full > :nth-child(1) > :nth-child(2)').realHover().wait(2000)
+        cy.contains('Audiences').realHover().wait(1000).click().wait(3000)
         cy.get('#audiences > .mb-8').scrollIntoView().wait(2000)
         cy.get('.flex-wrap > [data-category="Technology"]').click().wait(2000)
         cy.get('.flex-wrap > [data-category="Design"]').click().wait(2000)
