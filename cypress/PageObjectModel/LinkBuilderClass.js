@@ -67,10 +67,8 @@ class LinkBuilder{
        cy.get('[data-range-key="Last Month"]').realHover().wait(2000).click().realMouseMove(300,300).wait(7000)
        cy.get('#reportrange').click().wait(2000)
        cy.get('.prev').realHover().wait(1000).click().realMouseMove(100,100).wait(2000)
-       cy.get('.left > .calendar-table > .table-condensed > tbody > :nth-child(3) > [data-title="r2c4"]')
-       .realHover().wait(1000).click().realMouseMove(500,500).wait(2000)
-       cy.get('.right > .calendar-table > .table-condensed > tbody > :nth-child(6) > [data-title="r5c1"]')
-       .realHover().wait(1000).click().realMouseMove(500,500).wait(2000)
+       cy.get('.left').contains('11').realHover().wait(1000).click().realMouseMove(500,500).wait(2000)
+       cy.get('.right').contains('19').realHover().wait(1000).click().realMouseMove(500,500).wait(2000)
        cy.get('.applyBtn').click().wait(9000)
     }
 
