@@ -5,6 +5,7 @@ class Dashboard{
         // Project Types
         cy.get('#user_type').select('SAAS',{scrollBehavior:false,force:true}).wait(4000)
         cy.get('#user_type').select('Accelerator',{scrollBehavior:false,force:true}).wait(4000)
+        cy.get('#user_type').select('Gaming',{scrollBehavior:false,force:true}).wait(4000)
         cy.get('#user_type').select('All Project Types',{scrollBehavior:false,force:true}).wait(4000)
         // Search and Reset
         cy.get('#search').type('Testing Project',{scrollBehavior:false}).wait(2000)
