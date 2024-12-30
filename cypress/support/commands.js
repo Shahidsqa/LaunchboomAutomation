@@ -1,10 +1,3 @@
-Cypress.Commands.add('getIframeBody', (iframeSelector) => {
-    return cy
-      .get('.__PrivateStripeElement > iframe') // Get the iframe
-     // .its('0.contentDocument.body') // Get the document of the iframe
-      .should('be.visible') // Ensure the iframe body is not empty
-      .then(cy.wrap); // Wrap the body so Cypress can interact with it
-  });
 
   import 'cypress-real-events/support'
   import { realHover } from "cypress-real-events/commands/realHover"
