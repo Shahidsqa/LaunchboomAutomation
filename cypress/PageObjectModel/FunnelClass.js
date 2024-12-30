@@ -8,6 +8,21 @@ class funnelTypes{
               cy.get('.project-row > :nth-child(1) > a').click({scrollBehavior:false}).wait(2000)
               cy.get('[data-tabs-target="#payment"]').click({scrollBehavior:false}).wait(2000)
               cy.get('#payment_method').select('Stripe',{scrollBehavior:false,force:true}).wait(2000)
+                cy.get('#stripe-settings > .flex').scrollIntoView().wait(2000)
+              cy.get('#stripe-settings > .flex > :nth-child(2) > .toggle-button > .mt-2 > .toggle')
+              .then(($toggle) => {
+            // Get the background color of the toggle
+               const color = $toggle.css('background-color')
+                 if(color === 'rgb(201, 201, 201)')
+                   {
+                      cy.get('#stripe-settings > .flex > :nth-child(2) > .toggle-button > .mt-2 > .toggle').click({scrollBehavior:false}).wait(2000)
+  
+                   }
+                  else 
+                    {
+                      cy.log('Stripe Element Toggle is ON')
+                    }
+                })
              }
 
      BillingAddress()
@@ -86,13 +101,8 @@ class funnelTypes{
   }
 
   followerFunnel(){
-    cy.visit("https://release.launchboom.com/admin/projects")
-        cy.wait(2000)
-        cy.get('#search').type('Testing Project',{scrollBehavior:false}).wait(2000)
-        cy.get('.basis-1\\/12 > :nth-child(2) > .flex-shrink-0').realHover({scrollBehavior:false})
-        .wait(1000).click({scrollBehavior:false}).realMouseMove(100,100).wait(2000)
-        cy.get('.project-row > :nth-child(1) > a').click({scrollBehavior:false}).wait(2000)
-        cy.get('[data-tabs-target="#admin"]').click({scrollBehavior:false}).wait(2000)
+    cy.visit("https://release.launchboom.com/admin/projects/1510/edit?hubspot_ticket_id")
+        cy.wait(3000)
         cy.get('#admin > .py-4 > :nth-child(2) > :nth-child(6)').scrollIntoView().wait(2000)
         cy.get(':nth-child(6) > :nth-child(2) > :nth-child(2) > .minh-label').select('Follower Funnel',{scrollBehavior:false,force:true}).wait(2000)
         cy.get('#admin').scrollIntoView().wait(2000)
@@ -123,18 +133,13 @@ class funnelTypes{
         // })
     
     cy.wait(4000)
-    cy.get('#reservation-btn').scrollIntoView().wait(1000)
-    cy.get('#reservation-btn').realHover().wait(2000).click().wait(6000)
+    cy.get('.btn').scrollIntoView().wait(1000)
+    cy.get('.btn').realHover().wait(2000).click().wait(6000)
   }
 
   optoutFunnel(){
-    cy.visit("https://release.launchboom.com/admin/projects")
-    cy.wait(2000)
-    cy.get('#search').type('Testing Project',{scrollBehavior:false}).wait(2000)
-    cy.get('.basis-1\\/12 > :nth-child(2) > .flex-shrink-0').realHover({scrollBehavior:false})
-    .wait(1000).click({scrollBehavior:false}).realMouseMove(100,100).wait(2000)
-    cy.get('.project-row > :nth-child(1) > a').click({scrollBehavior:false}).wait(2000)
-    cy.get('[data-tabs-target="#admin"]').click({scrollBehavior:false}).wait(2000)
+    cy.visit("https://release.launchboom.com/admin/projects/1510/edit?hubspot_ticket_id")
+    cy.wait(3000)
     cy.get('#admin > .py-4 > :nth-child(2) > :nth-child(6)').scrollIntoView().wait(2000)
     cy.get(':nth-child(6) > :nth-child(2) > :nth-child(2) > .minh-label').select('Classic + OptOut',{scrollBehavior:false,force:true}).wait(2000)
     cy.get('#admin').scrollIntoView().wait(2000)
