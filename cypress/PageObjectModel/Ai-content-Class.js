@@ -87,7 +87,7 @@ AiAdsContentAgain()
     cy.get('.ml-2').click().wait(1000)
     cy.get('#submit-btn').scrollIntoView().wait(2000)
     cy.get('#submit-btn').realHover().wait(1000).click().realMouseMove(100,100).wait(3000)
-    cy.get('.swal2-cancel').realHover().wait(500).click().wait(50000)
+    cy.get('.swal2-confirm').realHover().wait(1000).click().wait(50000)
     
   }
   AiAdsContent()
