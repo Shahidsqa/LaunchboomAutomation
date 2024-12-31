@@ -14,8 +14,9 @@ it('Ai-Content-Gen',function(){
      obj.ProductFeatures()
      obj.TargetAudience()
      obj.USP()
-     obj.AiAdsContent()
      obj.AiAdsContentAgain()
+     obj.AiAdsContent()
+     
 
 })
 
