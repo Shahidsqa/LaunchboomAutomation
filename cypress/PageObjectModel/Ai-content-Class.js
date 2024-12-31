@@ -74,18 +74,9 @@ class AiContent{
     cy.get('#submit-btn').realHover().wait(1000).click().realMouseMove(100,100).wait(50000)
     
   }
-  AiAdsContent()
+AiAdsContentAgain()
   {
-    cy.get(':nth-child(2) > .card-content-wrap > :nth-child(1) > .edit-btn').click({scrollBehavior:false}).wait(2000) 
-    cy.get('.card-content_text-input').type("  "+'**'+'Lomi the best in world'+'**',{scrollBehavior:false}).wait(2000)
-    cy.get('.save-btn').click({scrollBehavior:false}).wait(3000)
-    cy.get('.in-active').click({scrollBehavior:false}).wait(2000)
-    cy.get(':nth-child(2) > .card-content-wrap > :nth-child(1) > .edit-btn').click({scrollBehavior:false}).wait(1000)
-    cy.get('.card-content_text-input').type("  "+'**'+'Lomi the best in world'+'**',{scrollBehavior:false}).wait(2000)
-    cy.get('.save-btn').click({scrollBehavior:false}).wait(3000)
-  }
-  AiAdsContentAgain()
-  {
+    cy.get('.in-active').click({scrollBehavior:false}).wait(3000)
     cy.get('.projects-name').realHover({scrollBehavior:false}).wait(2000)
     cy.contains('AI Generator').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false,force:true}).wait(2000)
     cy.get('.top-steps-wrap > ul > :nth-child(2)').click({scrollBehavior:false}).wait(2000)
@@ -96,12 +87,30 @@ class AiContent{
     cy.get('.ml-2').click().wait(1000)
     cy.get('#submit-btn').scrollIntoView().wait(2000)
     cy.get('#submit-btn').realHover().wait(1000).click().realMouseMove(100,100).wait(3000)
-    cy.get('.swal2-cancel').realHover().wait(500).click().wait(49000)
-    cy.get('.in-active').click({scrollBehavior:false}).wait(3000)
+    cy.get('.swal2-cancel').realHover().wait(500).click().wait(50000)
+    
+  }
+  AiAdsContent()
+  {
+    cy.get(':nth-child(2) > .card-content-wrap > :nth-child(1) > .edit-btn').click({scrollBehavior:false}).wait(2000) 
+    cy.get('.card-content_text-input').type("  "+'**'+'Lomi the best in world'+'**',{scrollBehavior:false}).wait(2000)
+    cy.get('.save-btn').click({scrollBehavior:false}).wait(3000)
+    cy.get('.in-active').click({scrollBehavior:false}).wait(2000)
+    cy.get(':nth-child(2) > .card-content-wrap > :nth-child(1) > .edit-btn').click({scrollBehavior:false}).wait(1000)
+    cy.get('.card-content_text-input').type("  "+'**'+'Lomi the best in world'+'**',{scrollBehavior:false}).wait(2000)
+    cy.get('.save-btn').click({scrollBehavior:false}).wait(3000)
     cy.get('.projects-name').realHover({scrollBehavior:false}).wait(2000)
     cy.contains('Funnel Builder').realHover({scrollBehavior:false}).wait(2000)
     .click({scrollBehavior:false,force:true}).wait(5000)
-    
+    cy.frameLoaded("[title='Page Builder']")
+      cy.iframe("[title='Page Builder']").find("#view-page-link")
+      .should('have.attr', 'href')  // Ensure the button has an href attribute
+      .then((href) => {
+        // Visit the extracted link in the same tab
+        cy.visit(href);
+      })
+      cy.wait(2000)
+      cy.get('.foot-wrap').scrollIntoView({duration:12000})
   }
 
 }
