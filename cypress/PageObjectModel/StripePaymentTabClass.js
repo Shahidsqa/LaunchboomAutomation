@@ -78,23 +78,6 @@ class stripepaymentTab{
     }
     Currencies()
     { 
-        // Checkout with USD ccurrency
-        cy.get('#payment').scrollIntoView().wait(2000)
-        cy.get('#payment > .py-4 > :nth-child(2) > :nth-child(2) > :nth-child(2) > div > .minh-label')
-        .select('USD',{scrollBehavior:false,force:true}).wait(2000)
-        cy.get('#payment > .py-4 > .mb-8 > :nth-child(2) > .bkg-ylb').realHover({scrollBehavior:false})
-         .wait(1000).click({scrollBehavior:false}).realMouseMove(100,100).wait(3000)
-        cy.visit('https://test.launchboomer.com/checkout?data1=f.faisalathar%2Cgmail%2Ccom')
-        cy.wait(4000)
-        cy.get('#cc-name').type('Faisal',{scrollBehavior:false}).wait(2000)
-        cy.get('.blue').should('include.text','$').wait(2000)
-        cy.frameLoaded("[title='Secure payment input frame']")
-        cy.get("[title='Secure payment input frame']").scrollIntoView().wait(1000)
-        cy.iframe("[title='Secure payment input frame']").find("[aria-label='Close']").click().wait(2000)
-        cy.iframe("[title='Secure payment input frame']").find('#Field-numberInput').type('4111111111111111').wait(1000)
-        cy.iframe("[title='Secure payment input frame']").find('#Field-expiryInput').type('04 / 27').wait(1000)
-        cy.iframe("[title='Secure payment input frame']").find('#Field-cvcInput').type('111').wait(2000)
-        cy.get('#card-button').scrollIntoView().should('include.text','$').wait(2000).click().wait(5000)
         // Checkout with EUR currency
        cy.visit('https://release.launchboom.com/admin/projects/1510/edit?stripe_key')
        cy.wait(3000)
@@ -167,7 +150,23 @@ class stripepaymentTab{
         cy.iframe("[title='Secure payment input frame']").find('#Field-expiryInput').type('04 / 27').wait(1000)
         cy.iframe("[title='Secure payment input frame']").find('#Field-cvcInput').type('111').wait(2000)
         cy.get('#card-button').should('include.text','CA$').wait(2000).click({scrollBehavior:false}).wait(5000)
-
+        // Checkout with USD ccurrency
+        cy.get('#payment').scrollIntoView().wait(2000)
+        cy.get('#payment > .py-4 > :nth-child(2) > :nth-child(2) > :nth-child(2) > div > .minh-label')
+        .select('USD',{scrollBehavior:false,force:true}).wait(2000)
+        cy.get('#payment > .py-4 > .mb-8 > :nth-child(2) > .bkg-ylb').realHover({scrollBehavior:false})
+         .wait(1000).click({scrollBehavior:false}).realMouseMove(100,100).wait(3000)
+        cy.visit('https://test.launchboomer.com/checkout?data1=f.faisalathar%2Cgmail%2Ccom')
+        cy.wait(4000)
+        cy.get('#cc-name').type('Faisal',{scrollBehavior:false}).wait(2000)
+        cy.get('.blue').should('include.text','$').wait(2000)
+        cy.frameLoaded("[title='Secure payment input frame']")
+        cy.get("[title='Secure payment input frame']").scrollIntoView().wait(1000)
+        cy.iframe("[title='Secure payment input frame']").find("[aria-label='Close']").click().wait(2000)
+        cy.iframe("[title='Secure payment input frame']").find('#Field-numberInput').type('4111111111111111').wait(1000)
+        cy.iframe("[title='Secure payment input frame']").find('#Field-expiryInput').type('04 / 27').wait(1000)
+        cy.iframe("[title='Secure payment input frame']").find('#Field-cvcInput').type('111').wait(2000)
+        cy.get('#card-button').scrollIntoView().should('include.text','$').wait(2000).click().wait(5000)
    }
 
    CheckoutwithPhoneNumber()
