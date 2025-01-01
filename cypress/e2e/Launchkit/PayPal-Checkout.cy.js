@@ -10,6 +10,7 @@ it('PayPal Checkout',function(){
     const obj2 = new AiContent()
      obj2.Login()
      obj1.PaypalMethod()
+     obj1.ShowAdvancePaypal()
      obj1.BillingAddress()
      obj1.PaypalclassicFunnel()
      obj1.CheckoutbyPaypal()
