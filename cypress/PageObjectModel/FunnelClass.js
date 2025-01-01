@@ -34,12 +34,12 @@ class funnelTypes{
            const color = $toggle.css('background-color')
            if(color === 'rgb(201, 201, 201)')
            {
-            cy.get('#payment > .py-4 > :nth-child(2) > :nth-child(8) > :nth-child(2) > .toggle-button > .mt-2 > .toggle').click().wait(2000)
+            cy.get('#payment > .py-4 > :nth-child(2) > :nth-child(8) > :nth-child(2) > .toggle-button > .mt-2 > .toggle').click({scrollBehavior:false}).wait(2000)
 
            }
            else 
            {
-            cy.log('Toggle is ON')
+            cy.log('Billing Address Toggle is ON')
            }
          })
          cy.get('#payment').scrollIntoView().wait(2000)
