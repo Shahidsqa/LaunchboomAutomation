@@ -1,4 +1,3 @@
-import { realHover } from "cypress-real-events/commands/realHover"
 
 class PaypalCheckout{
 
@@ -10,7 +9,23 @@ class PaypalCheckout{
         cy.get('.project-row > :nth-child(1) > a').click({scrollBehavior:false}).wait(2000)
         cy.get('[data-tabs-target="#payment"]').click({scrollBehavior:false}).wait(2000)
         cy.get('#payment_method').select('Paypal',{scrollBehavior:false,force:true}).wait(2000)
-
+    }
+    ShowAdvancePaypal()
+    {
+      cy.get('#paypal-settings').scrollIntoView().wait(2000)
+      cy.get('#paypal-settings > :nth-child(2) > .toggle-button > .mt-2 > .toggle')
+      .then(($toggle) => {
+        // Get the background color of the toggle
+        const color = $toggle.css('background-color')
+        if(color === 'rgb(201, 201, 201)')
+        {
+          cy.get('#paypal-settings > :nth-child(2) > .toggle-button > .mt-2 > .toggle').click({scrollBehavior:false}).wait(2000)
+        }
+        else 
+        {
+          cy.log('Advance Paypal Toggle is ON')
+        }
+      })
     }
 
      BillingAddress()
@@ -22,12 +37,12 @@ class PaypalCheckout{
           const color = $toggle.css('background-color')
           if(color === 'rgb(201, 201, 201)')
           {
-            cy.get('#payment > .py-4 > :nth-child(2) > :nth-child(8) > :nth-child(2) > .toggle-button > .mt-2 > .toggle').click().wait(2000)
+            cy.get('#payment > .py-4 > :nth-child(2) > :nth-child(8) > :nth-child(2) > .toggle-button > .mt-2 > .toggle').click({scrollBehavior:false}).wait(2000)
 
           }
           else 
           {
-            cy.log('Toggle is ON')
+            cy.log('Billing Address Toggle is ON')
           }
         })
         cy.get('#payment').scrollIntoView().wait(2000)
