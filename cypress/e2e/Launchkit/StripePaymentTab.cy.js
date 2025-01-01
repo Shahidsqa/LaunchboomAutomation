@@ -5,7 +5,7 @@ import AiContent from "../../PageObjectModel/Ai-content-Class"
 // returning false here prevents cypress from failing tests
 Cypress.on("uncaught:exception",()=>false)
 
-it('Payment Tab Testing',function(){
+it('Stripe Payment Tab Testing',function(){
     cy.viewport(1200,600)
     const obj2 = new AiContent()
     const obj1 = new stripepaymentTab()
