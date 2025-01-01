@@ -172,7 +172,7 @@ class funnelTypes{
         
         cy.wait(4000)
         cy.get('.btn').scrollIntoView().wait(1000)
-        cy.get('.no-thanks-link').click().wait(3000)
+        cy.get('.no-thanks-link').click({scrollBehavior:false}).wait(3000)
         cy.get('[href="https://www.instagram.com"]').scrollIntoView().wait(2000)
         cy.get('[href="https://www.instagram.com"]').click().wait(5000)
 
