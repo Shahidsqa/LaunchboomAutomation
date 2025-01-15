@@ -5,8 +5,8 @@ module.exports = defineConfig({
   env: {
     LaunchkitAppUrl: "https://release.launchboom.com/admin/app/login",
     CheckoutAppUrl1: "https://test.launchboomer.com",
-    CheckoutAppUrl2: "https://mahsam.launchboom.co/1",
-    CheckoutAppUrl3: "https://mahsam.launchboom.co/checkout?data1=f.faisalathar%2Cgmail%2Ccom",
+    CheckoutAppUrl2: "https://test.launchboomer.com/1",
+    CheckoutAppUrl3: "https://test.launchboomer.com/checkout?data1=f.faisalathar%2Cgmail%2Ccom",
     ProjectUrl: "https://release.launchboom.com/admin/projects/1510/edit",
   },
   reporter: 'cypress-mochawesome-reporter',
