@@ -1,12 +1,17 @@
 const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
-  defaultCommandTimeout:6000,
+  watchForFileChanges:false,
+  env: {
+    LaunchkitAppUrl: "https://release.launchboom.com/admin/app/login",
+    CheckoutAppUrl1: "https://test.launchboomer.com",
+    CheckoutAppUrl2: "https://mahsam.launchboom.co/1",
+    CheckoutAppUrl3: "https://mahsam.launchboom.co/checkout?data1=f.faisalathar%2Cgmail%2Ccom",
+    ProjectUrl: "https://release.launchboom.com/admin/projects/1510/edit",
+  },
   reporter: 'cypress-mochawesome-reporter',
   e2e: {
-    watchForFileChanges:false,
     chromeWebSecurity: false,
-    defaultCommandTimeout:10000,
     pageLoadTimeout:120000,
     setupNodeEvents(on, config) {
 
@@ -16,4 +21,5 @@ module.exports = defineConfig({
       
     },
   },
+  
 });
