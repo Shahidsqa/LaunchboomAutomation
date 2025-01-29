@@ -8,7 +8,7 @@ it("Post Campaign",function(){
     const obj1 = new PostCampaign()
     const obj2 = new AiContent()
      obj2.Login()
-     obj2.CreateProject()
+     obj2.CreateProject('Post Campaign')
      obj1.OpenPostCampaign()
      obj1.EnterProjectLink()
      obj1.UploadFile()

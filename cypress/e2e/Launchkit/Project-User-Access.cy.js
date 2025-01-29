@@ -9,7 +9,7 @@ it('Project User Access',function(){
     const obj1 = new ProjUserAccess()
     const obj2 = new AiContent()
      obj2.Login()
-     obj2.CreateProject()
+     obj2.CreateProject('Project User Access')
      obj1.OpenProjUserAccess()
      obj1.AddUser()
      obj1.SearchUser()

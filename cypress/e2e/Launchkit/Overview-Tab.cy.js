@@ -11,7 +11,7 @@ it('Overview Tab Testing',function(){
     const obj2 = new AiContent()
     const obj3 = new funnelTypes()
     obj2.Login()
-    obj2.CreateProject()
+    obj2.CreateProject('OverviewTab Test')
     obj1.UpdateProjectName()
     obj1.SEODescription()
     obj1.WrongFormatImageUpload()

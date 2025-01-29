@@ -7,7 +7,7 @@ it('Ai-Content-Gen',function(){
     cy.viewport(1200,600)   
     const obj = new AiContent()
      obj.Login()
-     obj.CreateProject()
+     obj.CreateProject('AI Gen')
      obj.OpenAiGen()
      obj.SelectCategory()
      obj.ProductName()

@@ -177,8 +177,8 @@ class stripepaymentTab{
       cy.get('#payment > .py-4 > :nth-child(2) > :nth-child(2) > :nth-child(2) > div > .minh-label')
       .select('INR',{scrollBehavior:false,force:true}).wait(2000)
       cy.get('#payment > .py-4 > :nth-child(2) > :nth-child(6) > :nth-child(1)').scrollIntoView().wait(2000)
-    cy.get('#reservation_cost').clear({scrollBehavior:false}).wait(1000).type('50.00',{scrollBehavior:false}).wait(2000)
-    cy.get('#payment').scrollIntoView().wait(2000)
+      cy.get('#reservation_cost').clear({scrollBehavior:false}).wait(1000).type('50.00',{scrollBehavior:false}).wait(2000)
+      cy.get('#payment').scrollIntoView().wait(2000)
       cy.get('#payment > .py-4 > .mb-8 > :nth-child(2) > .bkg-ylb').realHover({scrollBehavior:false})
        .wait(1000).click({scrollBehavior:false}).realMouseMove(100,100).wait(2000)
        cy.get('#alert-1').should('include.text','Project Successfully Updated')
@@ -196,7 +196,7 @@ class stripepaymentTab{
       cy.iframe("[title='Secure payment input frame']").find('#Field-cvcInput').type('111').wait(2000)
       cy.get('#card-button').scrollIntoView().should('include.text','₹50').wait(2000).click({scrollBehavior:false}).wait(5000)
       cy.url().should('include','/reserved')
-      //   // Checkout with USD currency
+         // Checkout with USD currency
         cy.visit(Cypress.env('ProjectUrl'))
         cy.wait(2000)
         cy.url().should('include','/edit')

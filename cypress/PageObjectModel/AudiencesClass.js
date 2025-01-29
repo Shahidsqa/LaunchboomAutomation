@@ -52,6 +52,7 @@ class audience{
         cy.get('div > .absolute.z-50.mt-2.30.rounded-md.shadow-lg.origin-top-right.right-0').invoke('css', 'display', 'block').wait(2000)
         cy.contains('Edit Audience').realHover().wait(2000).click().realMouseMove(100,100).wait(3000)
         cy.get('#name').type('d').wait(2000)
+        cy.get('#description').type('Editing Audience details...').wait(2000)
        // cy.get('#category_id').select('General')
         cy.get('.select2-selection').click().type('Faisal-Athar{enter}').wait(2000)
         cy.get('.bkg-ylb').realHover().wait(1000).click().realMouseMove(100,100).wait(3000)

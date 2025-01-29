@@ -23,7 +23,8 @@ class ABTesting{
         cy.get('.bkg-ylb').scrollIntoView().wait(2000).realHover().wait(1000).click().wait(2000)
         cy.get('#ab_test_title').type('AB Test 01').wait(2000)
         cy.get('.bg-teal-500').realHover().wait(1000).click().wait(5000)
-        cy.get('.status-bar-ab-test').should('include.text','LIVE').wait(3000)
+        cy.get('.status-dot').should('include.text','LIVE')
+        cy.get('.justify-around > :nth-child(3) > :nth-child(2)').should('include.text','Running').wait(3000)
     }
     EndTest()
     {

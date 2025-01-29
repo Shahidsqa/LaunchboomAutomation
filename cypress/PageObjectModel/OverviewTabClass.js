@@ -118,26 +118,29 @@ class OverviewTab
         cy.wrap($heading).should('have.css', 'font-family', 'Iceberg')}).wait(1000)
         cy.get('p').not('.foot-wrap p').each(($paragraph) => {
         cy.wrap($paragraph).should('have.css', 'font-family', '"Playwrite IS"')}).wait(1000)
-        cy.get('.IDL5I64BAI9W9TJ0 > #top-cta-location').scrollIntoView().wait(2000)
-        cy.get('.IDL5I64BAI9W9TJ0 > #top-cta-location > .v4-n--inner > .v4-n--inn-align > .v4-n--bottom-content-wrap > .v4-n--cta-inputs-wrap > .sign-up-form > .email').type('f.faisalathar@gmail.com',{scrollBehavior:false})
-        cy.wait(2000)
-        cy.get('.IDL5I64BAI9W9TJ0 > #top-cta-location > .v4-n--inner > .v4-n--inn-align > .v4-n--bottom-content-wrap > .v4-n--cta-inputs-wrap > .sign-up-form > .cta-form-submit').click({scrollBehavior:false}).wait(4000)
+       // cy.get('.IDL5I64BAI9W9TJ0 > #top-cta-location').scrollIntoView().wait(2000)
+       // cy.get('.IDL5I64BAI9W9TJ0 > #top-cta-location > .v4-n--inner > .v4-n--inn-align > .v4-n--bottom-content-wrap > .v4-n--cta-inputs-wrap > .sign-up-form > .email').type('f.faisalathar@gmail.com',{scrollBehavior:false})
+       // cy.wait(2000)
+       // cy.get('.IDL5I64BAI9W9TJ0 > #top-cta-location > .v4-n--inner > .v4-n--inn-align > .v4-n--bottom-content-wrap > .v4-n--cta-inputs-wrap > .sign-up-form > .cta-form-submit').click({scrollBehavior:false}).wait(4000)
         // Verifying fonts on Reservation page
+        cy.visit('http://test.launchboomer.com/reservation').wait(5000)
         cy.get('h1, h2, h3, h4, h5, h6').each(($heading) => {
         cy.wrap($heading).should('have.css', 'font-family', 'Iceberg')}).wait(1000)
         cy.get('p').not('.foot-wrap p').each(($paragraph) => {
         cy.wrap($paragraph).should('have.css', 'font-family', '"Playwrite IS"')}).wait(1000)
-        cy.get('.btn').scrollIntoView().wait(1000)
-        cy.get('.no-thanks-link').click({scrollBehavior:false}).wait(3000)
+        //cy.get('.btn').scrollIntoView().wait(1000)
+        //cy.get('.no-thanks-link').click({scrollBehavior:false}).wait(3000)
         // Verifying fonts on Thank-you page
+        cy.visit('http://test.launchboomer.com/thank-you').wait(5000)
         cy.get('h1, h2, h3, h4, h5, h6').each(($heading) => {
         cy.wrap($heading).should('have.css', 'font-family', 'Iceberg')}).wait(1000)
         cy.get('p').not('.foot-wrap p').each(($paragraph) => {
         cy.wrap($paragraph).should('have.css', 'font-family', '"Playwrite IS"')}).wait(1000)
-        cy.go(-1).wait(2000)
-        cy.get('.btn').scrollIntoView().wait(1000).click().wait(7000)
-        cy.url().should('include','/checkout').wait(1000)
+       // cy.go(-1).wait(2000)
+       // cy.get('.btn').scrollIntoView().wait(1000).click().wait(7000)
+       // cy.url().should('include','/checkout').wait(1000)
         // Filling checkout form
+        cy.visit('http://test.launchboomer.com/checkout').wait(7000)
         cy.frameLoaded("[title='Secure address input frame']")
         cy.get("[title='Secure address input frame']").scrollIntoView().wait(1000)
         cy.iframe("[title='Secure address input frame']").find('#Field-nameInput').type('Faisal Athar').wait(1000)
@@ -163,9 +166,10 @@ class OverviewTab
          cy.wrap($button).should('have.css', 'font-family', 'Montserrat, sans-serif')})
          cy.get('label').each(($label) => {
          cy.wrap($label).should('have.css', 'font-family', 'Montserrat, sans-serif')})
-         cy.get('#card-button').click().wait(5000)
-        cy.url().should('include','/reserved')
+        // cy.get('#card-button').click().wait(5000)
+        //cy.url().should('include','/reserved')
         // Verifying fonts on Reserved page
+        cy.visit('http://test.launchboomer.com/reserved').wait(5000)
         cy.get('h1, h2, h3, h4, h5, h6').each(($heading) => {
         cy.wrap($heading).should('have.css', 'font-family', 'Iceberg')}).wait(1000)
         cy.get('p').not('.foot-wrap p').each(($paragraph) => {

@@ -9,7 +9,7 @@ it('Mailchimp/Stripe Oauth',function(){
     const obj2 = new AiContent()
     const obj1 = new McStripeOauth()
     obj2.Login()
-    obj2.CreateProject()
+    obj2.CreateProject('MC-Stripe Oauth')
     obj1.mcOAuth()
     obj1.ChangeList()
     obj1.ResetmcOauth()

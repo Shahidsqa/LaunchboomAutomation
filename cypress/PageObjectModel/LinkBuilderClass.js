@@ -62,6 +62,7 @@ class LinkBuilder{
                cy.get('.bkg-ylb').realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false}).realMouseMove(100,100).wait(5000)
                cy.contains(custmLink).should('exist')
                cy.get('.bg-white > :last-child').scrollIntoView()
+               cy.contains(custmLink).invoke('attr', 'style', 'color: red; font-size: 20px;').wait(3000)
             })
             cy.get('.bg-white > :last-child').contains('Copy Link').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(200,200).wait(2000)
             cy.get('.bg-white > :last-child').should('include.text','Copied!')
@@ -77,7 +78,7 @@ class LinkBuilder{
        cy.get('[data-range-key="Last Month"]').realHover().wait(2000).click().realMouseMove(300,300).wait(7000)
        cy.get('#reportrange').click().wait(2000)
        cy.get('.prev').realHover().wait(1000).click().realMouseMove(100,100).wait(2000)
-       cy.get('.left').contains('11').realHover().wait(1000).click().realMouseMove(500,500).wait(2000)
+       cy.get('.left').contains('19').realHover().wait(1000).click().realMouseMove(500,500).wait(2000)
        cy.get('.right').contains('19').realHover().wait(1000).click().realMouseMove(500,500).wait(2000)
        cy.get('.applyBtn').click().wait(9000)
     }

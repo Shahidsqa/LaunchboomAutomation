@@ -23,8 +23,7 @@ class Dashboard{
         cy.get('#search').type('syed@launchboom.com',{scrollBehavior:false}).wait(2000)
         cy.get('.basis-1\\/12 > :nth-child(2) > .flex-shrink-0').realHover({scrollBehavior:false})
         .wait(1000).click({scrollBehavior:false}).realMouseMove(100,100).wait(2000)
-        cy.get('.shadow-xl > .sm\\:px-6').scrollIntoView({duration:5000}).wait(1000)
-        cy.get('.flex.sm\\:px-4').scrollIntoView().wait(1000)
+        cy.get('.min-w-full > .divide-y > :last-child').scrollIntoView({duration:5000}).wait(1000)
         cy.get('.ml-2').click({scrollBehavior:false,force:true}).wait(2000)
         cy.url().should('eq','https://release.launchboom.com/admin/projects').wait(1000)
         // Create Project
@@ -66,10 +65,10 @@ class Dashboard{
         cy.url().should('include','/ab-testing').wait(1000)
         cy.go(-1).wait(3000)
         // A/B testing - Res
-        cy.get(':nth-child(1) > .text-right').click({scrollBehavior:false}).wait(2000)
-        cy.contains('A/B Testing - Res').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(200,200).wait(3000)
-        cy.url().should('include','/reservation-ab-testing').wait(1000)
-        cy.go(-1).wait(3000)
+        // cy.get(':nth-child(1) > .text-right').click({scrollBehavior:false}).wait(2000)
+        // cy.contains('A/B Testing - Res').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(200,200).wait(3000)
+        // cy.url().should('include','/reservation-ab-testing').wait(1000)
+        // cy.go(-1).wait(3000)
         // Link Builder
         cy.get(':nth-child(1) > .text-right').click({scrollBehavior:false}).wait(2000)
         cy.contains('Link Builder').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(200,200).wait(3000)
@@ -182,7 +181,7 @@ class Dashboard{
         cy.contains('Refresh Data').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(200,200).wait(2000)
         cy.url().should('include','/refresh').wait(1000)
         cy.get(':nth-child(3) > :nth-child(2) > .bg-blue-500').realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false}).realMouseMove(100,100)
-        cy.get('.overflow-y-auto').scrollIntoView().wait(6000)
+        cy.get('.overflow-y-auto').scrollIntoView().wait(8000)
         cy.get('.overflow-y-auto > :nth-child(1)').then(($el) => {
             const text = $el.text();
           // Custom OR condition

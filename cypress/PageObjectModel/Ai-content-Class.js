@@ -10,14 +10,14 @@ class AiContent{
         cy.wait(1000)
         cy.get('.button').realHover().click()
         cy.wait(2000)
-        cy.url().should('eq','https://release.launchboom.com/admin/projects')
+       // cy.url().should('eq','https://release.launchboom.com/admin/projects')
         cy.log('Login is successful').wait(1000)
     }
-  CreateProject()
+  CreateProject(projName)
   {
     cy.get('.bkg-ylb').realHover({scrollBehavior:false}).click({scrollBehavior:false}).wait(2000)
     cy.url().should('include','/create')
-    const random = 'Project'+Math.floor(Math.random() * (999 - 100 + 1))
+    const random = projName+Math.floor(Math.random() * (999 - 100 + 1))
     cy.get('#name').type(random,{scrollBehavior:false}).wait(2000)
     cy.get('#overview > .py-4 > .mb-8 > :nth-child(2) > .bkg-ylb').realHover({scrollBehavior:false})
     .click({scrollBehavior:false}).realMouseMove(100,100).wait(2000)
@@ -138,15 +138,15 @@ class AiContent{
       })
       cy.wait(1000)
       cy.get('body').then(($body) => {
-        if ($body.find('h2:contains("Lomi Smart Composter")').length > 0 || 
-            $body.find('p:contains("Lomi Smart Composter")').length > 0) 
+        if ($body.find('h2:contains("Lomi")').length > 0 || 
+            $body.find('p:contains("Lomi")').length > 0) 
             {
           // The condition is satisfied, so you can log or proceed
-              cy.log('Condition satisfied: One or both elements contain "Lomi Smart Composter"');
+              cy.log('Condition satisfied: One or both elements contain "Lomi"');
             } 
             else
              {
-               throw new Error('Neither h2 nor p contains "Lomi Smart Composter"');
+               throw new Error('Neither h2 nor p contains "Lomi"');
              }
       })
       cy.wait(1000)

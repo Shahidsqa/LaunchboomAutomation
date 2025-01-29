@@ -12,5 +12,5 @@ it('Link Builder',function(){
     obj1.OpenLinkBuilder()
     obj1.CreateLink()
     obj1.CheckDatePicker()
-   // obj1.CopyLink()
+    obj1.CopyLink()
 })
