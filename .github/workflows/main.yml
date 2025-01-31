@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: Checkout the latest code
         uses: actions/checkout@v4
+      - name: Run Cypress in Headed Mode
+        run: npx cypress run --headed --browser chrome
       - name: Save screenshots (if any)
         if: always()
         uses: actions/upload-artifact@v4
