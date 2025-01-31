@@ -10,8 +10,11 @@ jobs:
         uses: actions/checkout@v4
       - name: Fix Cypress Permissions
         run: chmod +x node_modules/.bin/cypress
-      - name: Run All Cypress Tests
-        run: npx cypress run --headed --browser chrome 
+      - name: Install xvfb
+        run: sudo apt-get install xvfb
+
+      - name: Run Cypress with xvfb
+        run: xvfb-run --auto-servernum npx cypress run --headed --browser chrome
       - name: Save screenshots (if any)
         if: always()
         uses: actions/upload-artifact@v4
