@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: Checkout the latest code
         uses: actions/checkout@v4
+      - name: Fix Cypress Permissions
+        run: chmod +x node_modules/.bin/cypress
       - name: Run All Cypress Tests
         run: npx cypress run --headed --browser chrome 
       - name: Save screenshots (if any)
