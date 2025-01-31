@@ -14,12 +14,11 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
-      - name: Archive screenshots and videos (if any)
+      - name: Save screenshots (if any)
         if: always()
         uses: actions/upload-artifact@v3
         with:
           name: cypress-artifacts
-          path: |
-            cypress/screenshots
-            cypress/videos
+          path: cypress/screenshots
+            
         
