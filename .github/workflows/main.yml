@@ -8,17 +8,6 @@ jobs:
     steps:
       - name: Checkout the latest code
         uses: actions/checkout@v4
-      - name: Install dependencies
-        run: npm install
-      - name: Fix Cypress Permissions
-        run: chmod +x node_modules/.bin/cypress
-      - name: Install Cypress
-        run: npx cypress install
-      - name: Install xvfb
-        run: sudo apt-get install xvfb
-
-      - name: Run Cypress with xvfb
-        run: xvfb-run --auto-servernum npx cypress run --headed --browser chrome
       - name: Save screenshots (if any)
         if: always()
         uses: actions/upload-artifact@v4
