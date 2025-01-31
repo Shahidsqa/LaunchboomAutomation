@@ -5,13 +5,13 @@ class ABTesting{
     {
         cy.get('.divide-y > :nth-child(1) > :nth-child(1) > a').click({scrollBehavior:false}).wait(2000)
         cy.get('.projects-name').realHover({scrollBehavior:false}).wait(2000)
-      //  cy.contains('Overview').scrollIntoView({force:true}).wait(1000)
+        cy.contains('Overview').scrollIntoView().wait(1000)
         cy.contains('A/B Testing').realHover({scrollBehavior:false}).wait(2000).click({force:true}).wait(3000)
         
     }
     MakeLPvariants()
     {
-        cy.get('.bkg-ylb.outline-purple.font-bold').scrollIntoView().wait(2000).realHover().wait(1000).click().wait(4000)
+        cy.contains('Create New Test').scrollIntoView().wait(2000).realHover().wait(1000).click().wait(4000)
         cy.get('.selectBtn').click().wait(3000)
         cy.get('#duplicate-A').click().wait(2000)
         cy.get('.swal2-confirm').realHover().wait(2000).click().wait(4000)
