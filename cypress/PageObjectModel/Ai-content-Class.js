@@ -10,7 +10,7 @@ class AiContent{
         cy.wait(1000)
         cy.get('.button').realHover().click()
         cy.wait(2000)
-       // cy.url().should('eq','https://release.launchboom.com/admin/projects')
+        cy.url().should('eq','https://release.launchboom.com/admin/projects')
         cy.log('Login is successful').wait(1000)
     }
   CreateProject(projName)

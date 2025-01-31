@@ -9,7 +9,7 @@ it('A/B Testing',function(){
     const obj1 = new ABTesting()
     const obj2 = new AiContent()
     obj2.Login()
-    obj2.CreateProject('A/B Testing')
+    obj2.CreateProject('ABTesting')
     obj1.OpenABTesting()
     obj1.MakeLPvariants()
     obj1.OpenABTesting()

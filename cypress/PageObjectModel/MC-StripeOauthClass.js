@@ -5,7 +5,8 @@ class McStripeOauth{
     {
         cy.get('.divide-y > :nth-child(1) > :nth-child(1) > a').click({scrollBehavior:false}).wait(2000)
         cy.get('[data-tabs-target="#email"]').click({scrollBehavior:false}).wait(2000)
-        cy.get('.flex > [style="align-self:flex-end;"] > .mc-btn-wrap > .bg-white').realHover({scrollBehavior:false})
+        cy.get('.flex > [style="align-self:flex-end;"] > .mc-btn-wrap > .bg-white').should('include.text','Connect My Account')
+        .realHover({scrollBehavior:false})
         .wait(1000).click().realMouseMove(100,100).wait(5000)
         cy.url().should('include','login.mailchimp.com')
         cy.get('#username').scrollIntoView().type('FaisalSqa',{force:true})

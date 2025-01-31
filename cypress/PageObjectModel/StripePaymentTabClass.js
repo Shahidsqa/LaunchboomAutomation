@@ -76,7 +76,7 @@ class stripepaymentTab{
     }
     Currencies()
     { 
-        // Checkout with EUR currency
+       // Checkout with EUR currency
         cy.get('#payment').scrollIntoView().wait(2000)
         cy.get('#payment > .py-4 > :nth-child(2) > :nth-child(2) > :nth-child(2) > div > .minh-label')
         .select('EUR',{scrollBehavior:false,force:true}).wait(2000)
