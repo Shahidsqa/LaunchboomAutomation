@@ -11,7 +11,7 @@ class ABTesting{
     }
     MakeLPvariants()
     {
-        cy.get('.bkg-ylb').scrollIntoView().wait(2000).realHover().wait(1000).click().wait(4000)
+        cy.get('.bkg-ylb.outline-purple.font-bold').scrollIntoView().wait(2000).realHover().wait(1000).click().wait(4000)
         cy.get('.selectBtn').click().wait(3000)
         cy.get('#duplicate-A').click().wait(2000)
         cy.get('.swal2-confirm').realHover().wait(2000).click().wait(4000)
