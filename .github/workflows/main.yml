@@ -8,6 +8,11 @@ jobs:
     steps:
       - name: Checkout the latest code
         uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Cypress
+        run: npx cypress install
       - name: Fix Cypress Permissions
         run: chmod +x node_modules/.bin/cypress
       - name: Install xvfb
