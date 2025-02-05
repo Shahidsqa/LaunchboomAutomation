@@ -4,8 +4,18 @@ class audience{
     Audiences()
     {
         cy.get('.h-full > :nth-child(1) > :nth-child(2)').realHover().wait(2000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.contains('Audiences').realHover().wait(1000).click().wait(2000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.url().should('include','/audiences').wait(1000)
+        cy.get('nav.side-nav .top-nav-link .nav-link.active').realHover().wait(1000)
+        cy.contains('Audiences').should('have.css','font-weight','700')
+        cy.get('[data-tabs-target="#live-audiences"]').realHover({scrollBehavior:false}).wait(2000)
+        cy.get('nav.side-nav .top-nav-link .nav-link.active')
+        .then(($el) => {
+           const after = window.getComputedStyle($el[0], 'after'); 
+           expect(after.getPropertyValue('background-color')).to.eq('rgb(255, 194, 28)');
+         })
         cy.get('#audiences > .mb-8').scrollIntoView().wait(2000)
         cy.get(':nth-child(1) > .active_option > .min-w-full > thead > tr > :nth-child(1)').should('include.text','General Audiences')
         cy.get('.flex-wrap > [data-category="Technology"]').click().wait(2000)
@@ -55,6 +65,7 @@ class audience{
         cy.get('#description').type('Editing Audience details...').wait(2000)
        // cy.get('#category_id').select('General')
         cy.get('.select2-selection').click().type('Faisal-Athar{enter}').wait(2000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.get('.bkg-ylb').realHover().wait(1000).click().realMouseMove(100,100).wait(3000)
         cy.get('#alert-1').should('include.text','Audience updated successfully')
     }
@@ -66,6 +77,7 @@ class audience{
         .realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).wait(5000)
         cy.get('#select2-project-container').click()
         cy.get('.select2-search__field').type('418786{enter}').wait(2000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.get('.py-3 > .border').realHover().wait(1000).click().wait(2000)
         cy.get('#audiences > .mb-8').should('be.visible').wait(1000)
         cy.get('#audiences > :nth-child(4) > .shadow-xl > :nth-child(1) > .active_option > .min-w-full > .divide-y > tr > .w-72.px-3 > .w-72 > .button')
@@ -79,6 +91,7 @@ class audience{
     SharedAudiences()
     {
         cy.get('[data-tabs-target="#shared-audience"]').click({scrollBehavior:false}).wait(2000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.get('.shadow-xl > .min-w-full > .bg-white > :nth-child(1) > .w-72 > .flex > .button').should('include.text','- Unshare Audiences').wait(1000)
         cy.get('.minh-label').click({scrollBehavior:false}).type('Testing Project',{scrollBehavior:false}).wait(3000)
         cy.get('.shadow-xl > .min-w-full > .bg-white > :nth-child(1) > :nth-child(3)').should('include.text','Testing Project').wait(1000)

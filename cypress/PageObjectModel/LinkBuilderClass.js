@@ -8,7 +8,9 @@ class LinkBuilder{
             cy.get('.project-row > :nth-child(1) > a').click({scrollBehavior:false}).wait(2000)
             cy.get('.projects-name').realHover({scrollBehavior:false}).wait(2000)
             cy.contains('Overview').scrollIntoView().wait(1000)
+            cy.get('body').should('have.css', 'font').and('include','Poppins')
             cy.contains('Link Builder').realHover({scrollBehavior:false}).wait(2000).click({force:true}).wait(3000)
+            cy.get('body').should('have.css', 'font').and('include','Poppins')
     }
     CreateLink()
     {

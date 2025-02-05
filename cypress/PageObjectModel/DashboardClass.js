@@ -28,6 +28,7 @@ class Dashboard{
         cy.url().should('eq','https://release.launchboom.com/admin/projects').wait(1000)
         // Create Project
         cy.get('.bkg-ylb').realHover({scrollBehavior:false}).click({scrollBehavior:false}).realMouseMove(100,100).wait(2000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.url().should('eq','https://release.launchboom.com/admin/projects/create').wait(1000)
         cy.go(-1).wait(3000)
     }
@@ -36,32 +37,38 @@ class Dashboard{
     {
         // Project Settings
         cy.get(':nth-child(1) > .text-right').click({scrollBehavior:false}).wait(2000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.contains('Project Settings').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(200,200).wait(2000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.url().should('include','/edit').wait(1000)
         cy.go(-1).wait(3000)
         // Funnel Builder
         cy.get(':nth-child(1) > .text-right').click({scrollBehavior:false}).wait(2000)
-        cy.contains('Funnel Builder').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(200,200).wait(4000)
+        cy.contains('Funnel Builder').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(200,200).wait(3000)
         cy.url().should('include','/ui-editor').wait(1000)
         cy.go(-1).wait(3000)
         // Analytics dashboard
         cy.get(':nth-child(1) > .text-right').click({scrollBehavior:false}).wait(2000)
         cy.contains('Analytics Dashboard').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(200,200).wait(3000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.url().should('include','/analytics-dashboard').wait(1000)
         cy.go(-1).wait(3000)
         // Ad Analytics
         cy.get(':nth-child(1) > .text-right').click({scrollBehavior:false}).wait(2000)
         cy.contains('Ad Analytics').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(200,200).wait(3000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.url().should('include','/ad-analytics').wait(1000)
         cy.go(-1).wait(3000)
         // Funnel Analytics
         cy.get(':nth-child(1) > .text-right').click({scrollBehavior:false}).wait(2000)
         cy.contains('Funnel Analytics').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(200,200).wait(3000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.url().should('include','/funnel-analytics').wait(1000)
         cy.go(-1).wait(3000)
         // A/B testing
         cy.get(':nth-child(1) > .text-right').click({scrollBehavior:false}).wait(2000)
         cy.contains('A/B Testing').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(200,200).wait(3000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.url().should('include','/ab-testing').wait(1000)
         cy.go(-1).wait(3000)
         // A/B testing - Res
@@ -69,20 +76,26 @@ class Dashboard{
         // cy.contains('A/B Testing - Res').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(200,200).wait(3000)
         // cy.url().should('include','/reservation-ab-testing').wait(1000)
         // cy.go(-1).wait(3000)
+
         // Link Builder
         cy.get(':nth-child(1) > .text-right').click({scrollBehavior:false}).wait(2000)
         cy.contains('Link Builder').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(200,200).wait(3000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.url().should('include','/link-builder').wait(1000)
         cy.go(-1).wait(3000)
         // Duplicate project
-        cy.get(':nth-child(1) > .text-right').click({scrollBehavior:false}).wait(2000)
+        cy.get(':nth-child(1) > .text-right').click({scrollBehavior:false}).wait(500)
+        cy.get(':nth-child(1) > .text-right > .relative > .absolute > .rounded-md').scrollIntoView().wait(2000)
         cy.contains('Duplicate Project').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(200,200).wait(3000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.get('.swal2-confirm').realHover().wait(1000).click().wait(3000)
         cy.get('#alert-1').should('include.text','Project successfully duplicated').wait(1000)
         cy.get('.ml-2').click({scrollBehavior:false}).wait(2000)
         // Delete project
-        cy.get(':nth-child(1) > .text-right').click({scrollBehavior:false}).wait(2000)
+        cy.get(':nth-child(1) > .text-right').click({scrollBehavior:false}).wait(500)
+        cy.get(':nth-child(1) > .text-right > .relative > .absolute > .rounded-md').scrollIntoView().wait(2000)
         cy.contains('Delete Project').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(200,200).wait(3000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.get('.swal2-confirm').realHover().wait(1000).click().wait(1000)
         cy.get('#alert-1').scrollIntoView().wait(2000)
         cy.get('#alert-1').should('include.text','Project successfully deleted').wait(1000)
@@ -91,6 +104,7 @@ class Dashboard{
         cy.get(':nth-child(1) > .text-right').click({scrollBehavior:false}).wait(500)
         cy.get(':nth-child(1) > .text-right > .relative > .absolute > .rounded-md').scrollIntoView().wait(2000)
         cy.contains('Project User Access').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(200,200).wait(3000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.url().should('include','/user-access').wait(1000)
         cy.go(-1).wait(3000)
       }
@@ -134,7 +148,9 @@ class Dashboard{
         cy.get('.basis-1\\/12 > :nth-child(2) > .flex-shrink-0').realHover({scrollBehavior:false})
         .wait(1000).click({scrollBehavior:false}).realMouseMove(100,100).wait(3000)
         cy.get('.project-row > :nth-child(1) > a').click({scrollBehavior:false}).wait(2000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.get('[data-tabs-target="#admin"]').click({scrollBehavior:false}).wait(2000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.get('.py-4 > :nth-child(2) > :nth-child(12)').scrollIntoView().wait(2000)
         cy.get(':nth-child(12) > :nth-child(2) > :nth-child(2) > .mt-2 > .toggle').click({scrollBehavior:false}).wait(2000)
         cy.get(':nth-child(12) > :nth-child(2) > :nth-child(3) > .mt-2 > .toggle').click({scrollBehavior:false}).wait(2000)
@@ -149,6 +165,7 @@ class Dashboard{
         cy.contains('Status Messages').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).realMouseMove(200,200).wait(2000)
         cy.url().should('include','/update-messages').wait(1000)
         cy.get('.overflow-y-auto > :nth-child(1)').should('include.text','p_mcDisabled:true p_fbDisabled:true, by admin input').wait(2000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.go(-1).wait(3000)
 
         // Enable Facebook/Mailchimp and check status again
@@ -194,6 +211,7 @@ class Dashboard{
               text.includes('Updating Facebook Data itteration 5...')
             ).to.be.true;
           })
+          cy.get('body').should('have.css', 'font').and('include','Poppins')
     }
 
 }

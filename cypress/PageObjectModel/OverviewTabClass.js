@@ -23,6 +23,7 @@ class OverviewTab
     cy.get('#overview > .py-4 > .mb-8 > :nth-child(2) > .bkg-ylb').realHover({scrollBehavior:false})
     .click({scrollBehavior:false}).realMouseMove(100,100).wait(2000)
     cy.get('#description').should('include.text','Testing SEO Description').wait(1000)
+    cy.get('body').should('have.css', 'font').and('include','Poppins')
     }
 
     WrongFormatFileUpload()

@@ -4,12 +4,24 @@ class Users{
     OpenUsers()
     {
         cy.get('.h-full > :nth-child(1) > :nth-child(2)').realHover().wait(2000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.contains('Users Management').realHover().wait(1000).click().wait(3000)
         cy.url().should('include','/users')
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
+        cy.get('nav.side-nav .top-nav-link .nav-link.active').realHover().wait(1000)
+        cy.contains('Users Management').should('have.css','font-weight','700')
+        cy.get('#search').realHover({scrollBehavior:false}).wait(2000)
+        cy.get('nav.side-nav .top-nav-link .nav-link.active')
+        .then(($el) => {
+           const after = window.getComputedStyle($el[0], 'after'); 
+           expect(after.getPropertyValue('background-color')).to.eq('rgb(255, 194, 28)');
+         })
+        
     }
     CreateProjOwner()
     {
         cy.get('[data-role="Project Owner"]').click({scrollBehavior:false}).wait(2000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.get('.mx-auto > .inline-flex').realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false}).wait(2000)
         cy.url().should('include','/users/create')
         cy.get('#name').type('Faisal Proj Owner',{scrollBehavior:false}).wait(1000)
@@ -22,6 +34,7 @@ class Users{
         cy.get(':nth-child(4) > .form-checkbox').scrollIntoView().click({force:true}).wait(2000)
         cy.get('.bkg-ylb').realHover().wait(1000).click().realMouseMove(100,100).wait(2000)
         cy.get('#password').type('Asdf@1234',{scrollBehavior:false}).wait(2000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.get('.bkg-ylb').realHover().wait(1000).click().wait(3000)
         cy.get('#alert-1').should('include.text','User created successfully')
 
@@ -29,6 +42,7 @@ class Users{
     CreateProjUser()
     {
         cy.get('[data-role="Project User"]').click({scrollBehavior:false}).wait(2000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.get('.mx-auto > .inline-flex').realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false}).wait(2000)
         cy.url().should('include','/users/create')
         cy.get('#name').type('Faisal Proj User',{scrollBehavior:false}).wait(1000)
@@ -47,6 +61,7 @@ class Users{
     CreateGamingUser()
     {
         cy.get('[data-role="Launchboom Gaming User"]').click({scrollBehavior:false}).wait(2000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.get('.mx-auto > .inline-flex').realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false}).wait(2000)
         cy.url().should('include','/users/create')
         cy.get('#name').type('Faisal Gaming User',{scrollBehavior:false}).wait(1000)
@@ -68,6 +83,7 @@ class Users{
         cy.get('#search').type('Faisal',{scrollBehavior:false}).wait(2000)
         cy.get(':nth-child(3) > .flex-shrink-0').realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false}).realMouseMove(100,100)
         cy.get('thead > tr > :nth-child(1)').scrollIntoView().wait(3000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.get('#reset').click({scrollBehavior:false,force:true}).wait(2000)
         cy.get('.sm\\:flex-1').scrollIntoView({duration:5000})
         cy.get('.sm\\:flex-1 > :nth-child(1) > .text-sm').invoke('text').then((text) => {const normalizedText = text.replace(/\s+/g, ' ').trim()
@@ -106,6 +122,7 @@ class Users{
         cy.get('#name').type('Test',{scrollBehavior:false}).wait(2000)
         cy.get('#name').click().wait(1000).invoke('val').then((updatedName)=>{
             cy.log('Updated User Name: ',updatedName)
+            cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.get('.bkg-ylb').realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false}).wait(500)
         cy.get('[data-role="Project Owner"]').click({scrollBehavior:false}).wait(1000)
         cy.get('#alert-1').should('include.text','User updated successfully')
@@ -132,6 +149,7 @@ class Users{
         cy.get('[data-role="Project User"]').click({scrollBehavior:false}).wait(2000)
         cy.get(':nth-child(1) > .px-6 > #deleteForm > .text-red-700 > .inline-block > path')
         .realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).wait(2000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.get('.swal2-confirm').realHover().wait(2000).click().wait(5000)
         cy.get('#alert-1').should('include.text','User deleted successfully')
     

@@ -5,6 +5,7 @@ class McStripeOauth{
     {
         cy.get('.divide-y > :nth-child(1) > :nth-child(1) > a').click({scrollBehavior:false}).wait(2000)
         cy.get('[data-tabs-target="#email"]').click({scrollBehavior:false}).wait(2000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.get('.flex > [style="align-self:flex-end;"] > .mc-btn-wrap > .bg-white').should('include.text','Connect My Account')
         .realHover({scrollBehavior:false})
         .wait(1000).click().realMouseMove(100,100).wait(5000)
@@ -16,6 +17,7 @@ class McStripeOauth{
         cy.get('#submitButton').scrollIntoView().realHover().wait(1000).click().wait(4000)
         cy.url().should('include','edit?mailchimp_list_id')
         cy.get('.swal2-select').select('LaunchKit').wait(2000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.get('.swal2-confirm').realHover().wait(1000).click().wait(1000)
         cy.get('[data-tabs-target="#email"]').click({scrollBehavior:false}).wait(1000)
         cy.get('#alert-1').should('include.text','Project Successfully Updated').wait(1000)
@@ -35,6 +37,7 @@ class McStripeOauth{
     {
         cy.get('[data-tabs-target="#email"]').click({scrollBehavior:false}).wait(1000)
         cy.get('.underline > span').realHover({scrollBehavior:false}).wait(1000).click().realMouseMove(100,100).wait(2000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.get('.swal2-cancel').realHover().wait(1000).click().wait(2000)
         cy.get('p').should('include.text','Mailchimp is connected!').wait(1000)
         cy.get('.underline > span').realHover({scrollBehavior:false}).wait(1000).click().realMouseMove(100,100).wait(2000)
@@ -46,6 +49,7 @@ class McStripeOauth{
     stripeOauth()
    {
        cy.get('[data-tabs-target="#payment"]').click({scrollBehavior:false}).wait(2000)
+       cy.get('body').should('have.css', 'font').and('include','Poppins')
        cy.get('#stripe-settings > .flex').scrollIntoView().wait(2000)
        cy.get('#stripe-settings > .flex > :nth-child(2) > [style="align-self:flex-end;"] > .mc-btn-wrap > .bg-white')
        .realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false}).realMouseMove(100,100).wait(5000)
@@ -59,6 +63,7 @@ class McStripeOauth{
     cy.get('#stripe-settings > .flex').scrollIntoView().wait(2000)
     cy.get('#stripe-settings > .flex > :nth-child(2) > :nth-child(2) > .underline > span')
     .realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false}).realMouseMove(100,100).wait(2000)
+    cy.get('body').should('have.css', 'font').and('include','Poppins')
     cy.get('.swal2-cancel').realHover().wait(1000).click()
     cy.get('#stripe-settings > .flex').scrollIntoView().wait(2000)
     cy.get('p').should('include.text','Success! Your Stripe account is now connected').wait(1000)

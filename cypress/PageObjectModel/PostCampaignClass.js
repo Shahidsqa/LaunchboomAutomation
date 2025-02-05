@@ -4,10 +4,13 @@ class PostCampaign{
         OpenPostCampaign()
           {
             cy.get('.divide-y > :nth-child(1) > :nth-child(1) > a').click({scrollBehavior:false}).wait(2000)
+            cy.get('body').should('have.css', 'font').and('include','Poppins')
             cy.get('.projects-name').realHover({scrollBehavior:false}).wait(2000)
             cy.contains('Overview').scrollIntoView().wait(1000)
-            cy.contains('Post Campaign').realHover({scrollBehavior:false}).wait(2000).click({force:true}).wait(4000)
+            cy.get('body').should('have.css', 'font').and('include','Poppins')
+            cy.contains('Post Campaign').realHover({scrollBehavior:false}).wait(2000).click({force:true}).wait(2000)
             cy.url().should('include','/campaign-ad-analysis')
+            cy.get('body').should('have.css', 'font').and('include','Poppins')
           }
 
           EnterProjectLink()
@@ -21,6 +24,7 @@ class PostCampaign{
                const Name = interception.response.body.effects?.dispatches[0]?.data?.project_info?.name
                expect(Name).equals("Reliq: The World's First Hybrid Control Surface");
              })
+             cy.get('body').should('have.css', 'font').and('include','Poppins')
             cy.get('#confirmation__info > p').scrollIntoView().wait(2000)
             cy.get('#confirmation__wrap > .confirmation__buttons-wrap > #conf-button__yes').click({force:true}).wait(1000)
               
@@ -37,6 +41,7 @@ class PostCampaign{
             cy.get('#file-name-wrap > p').scrollIntoView().wait(2000)
             cy.get('#file-upload-button').realHover({force:true}).wait(1000).click({force:true}).realMouseMove(100,100).wait(5000)
             cy.get('.font-extrabold').should('include.text','Your results will be ready soon...')
+            cy.get('body').should('have.css', 'font').and('include','Poppins')
          }
 
            

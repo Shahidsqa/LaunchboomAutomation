@@ -4,7 +4,9 @@ class funnelTypes{
              {
               cy.visit(Cypress.env('ProjectUrl')).wait(2000)
               cy.url().should('include','/edit')
+              cy.get('body').should('have.css', 'font').and('include','Poppins')
               cy.get('[data-tabs-target="#payment"]').click({scrollBehavior:false}).wait(2000)
+              cy.get('body').should('have.css', 'font').and('include','Poppins')
               cy.get('#payment_method').select('Stripe',{scrollBehavior:false,force:true}).wait(2000)
                 cy.get('#stripe-settings > .flex').scrollIntoView().wait(2000)
               cy.get('#stripe-settings > .flex > :nth-child(2) > .toggle-button > .mt-2 > .toggle')
@@ -97,6 +99,7 @@ class funnelTypes{
     classicFunnel()
     {
       cy.get('[data-tabs-target="#admin"]').click({scrollBehavior:false}).wait(2000)
+      cy.get('body').should('have.css', 'font').and('include','Poppins')
       cy.get('#admin > .py-4 > :nth-child(2) > :nth-child(6)').scrollIntoView().wait(1000)
       cy.get(':nth-child(6) > :nth-child(2) > :nth-child(2) > .minh-label').select('Classic',{scrollBehavior:false,force:true}).wait(2000)
       cy.get('#admin').scrollIntoView().wait(1000)

@@ -6,7 +6,9 @@ class PaypalCheckout{
       cy.visit(Cypress.env('ProjectUrl'))
       cy.wait(2000)
       cy.url().should('include','/edit')
+      cy.get('body').should('have.css', 'font').and('include','Poppins')
       cy.get('[data-tabs-target="#payment"]').click({scrollBehavior:false}).wait(2000)
+      cy.get('body').should('have.css', 'font').and('include','Poppins')
       cy.get('#payment_method').select('Paypal',{scrollBehavior:false,force:true}).wait(2000)
 
     }
@@ -54,6 +56,7 @@ class PaypalCheckout{
     PaypalclassicFunnel(){
 
         cy.get('[data-tabs-target="#admin"]').click({scrollBehavior:false}).wait(2000)
+        cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.get('#admin > .py-4 > :nth-child(2) > :nth-child(6)').scrollIntoView().wait(1000)
         cy.get(':nth-child(6) > :nth-child(2) > :nth-child(2) > .minh-label').select('Classic',{scrollBehavior:false,force:true}).wait(2000)
         cy.get('#admin').scrollIntoView().wait(1000)
