@@ -9,13 +9,11 @@ class audience{
         cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.url().should('include','/audiences').wait(1000)
         cy.get('nav.side-nav .top-nav-link .nav-link.active').realHover().wait(1000)
-        cy.contains('Audiences').should('have.css','font-weight','700')
-        cy.get('[data-tabs-target="#live-audiences"]').realHover({scrollBehavior:false}).wait(2000)
+        cy.contains('Audiences').realHover().should('have.css','font-weight','700').realMouseMove(500,500)
         cy.get('nav.side-nav .top-nav-link .nav-link.active')
         .then(($el) => {
            const after = window.getComputedStyle($el[0], 'after'); 
-           expect(after.getPropertyValue('background-color')).to.eq('rgb(255, 194, 28)');
-         })
+           expect(after.getPropertyValue('background-color')).to.eq('rgb(255, 194, 28)')}).wait(1000)    
         cy.get('#audiences > .mb-8').scrollIntoView().wait(2000)
         cy.get(':nth-child(1) > .active_option > .min-w-full > thead > tr > :nth-child(1)').should('include.text','General Audiences')
         cy.get('.flex-wrap > [data-category="Technology"]').click().wait(2000)

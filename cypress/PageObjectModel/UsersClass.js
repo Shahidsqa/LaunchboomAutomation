@@ -9,8 +9,7 @@ class Users{
         cy.url().should('include','/users')
         cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.get('nav.side-nav .top-nav-link .nav-link.active').realHover().wait(1000)
-        cy.contains('Users Management').should('have.css','font-weight','700')
-        cy.get('#search').realHover({scrollBehavior:false}).wait(2000)
+        cy.contains('Users Management').realHover().should('have.css','font-weight','700').realMouseMove(500,500)
         cy.get('nav.side-nav .top-nav-link .nav-link.active')
         .then(($el) => {
            const after = window.getComputedStyle($el[0], 'after'); 

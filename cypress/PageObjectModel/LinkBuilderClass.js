@@ -11,11 +11,17 @@ class LinkBuilder{
             cy.get('body').should('have.css', 'font').and('include','Poppins')
             cy.contains('Link Builder').realHover({scrollBehavior:false}).wait(2000).click({force:true}).wait(3000)
             cy.get('body').should('have.css', 'font').and('include','Poppins')
+            cy.get('.projects-name').realHover({scrollBehavior:false}).wait(1000)
+            cy.contains('Analytics').should('have.css','font-weight','700').realMouseMove(500,500)
+            cy.get('nav.side-nav .top-nav-link .nav-link.active')
+           .then(($el) => {
+             const after = window.getComputedStyle($el[0], 'after'); 
+             expect(after.getPropertyValue('background-color')).to.eq('rgb(255, 194, 28)')}).wait(1000)
     }
     CreateLink()
     {
         // Create link without link name
-        cy.get('.bkg-ylb').realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false}).realMouseMove(100,100)
+        cy.get('.bkg-ylb').realHover({scrollBehavior:false}).click({scrollBehavior:false}).realMouseMove(100,100)
         cy.get('.bold').scrollIntoView().wait(3000)
         // Create Link with wrong format
         cy.get('#unique_identifier').type('abLink@123',{scrollBehavior:false}).wait(2000)

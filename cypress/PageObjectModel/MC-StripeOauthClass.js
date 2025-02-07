@@ -3,7 +3,7 @@ import { realHover } from "cypress-real-events/commands/realHover"
 class McStripeOauth{
     mcOAuth()
     {
-        cy.get('.divide-y > :nth-child(1) > :nth-child(1) > a').click({scrollBehavior:false}).wait(2000)
+        cy.get('.divide-y > :nth-child(1) > :nth-child(1) > a').click({scrollBehavior:false,force:true}).wait(2000)
         cy.get('[data-tabs-target="#email"]').click({scrollBehavior:false}).wait(2000)
         cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.get('.flex > [style="align-self:flex-end;"] > .mc-btn-wrap > .bg-white').should('include.text','Connect My Account')

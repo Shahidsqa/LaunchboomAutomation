@@ -14,17 +14,16 @@ class AiContent{
         cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.url().should('eq','https://release.launchboom.com/admin/projects')
         cy.get('nav.side-nav .top-nav-link .nav-link.active').realHover().wait(1000)
-        cy.contains('Dashboard').should('have.css','font-weight','700')
-        cy.get('#search').realHover({scrollBehavior:false}).wait(2000)
+        cy.contains('Dashboard').should('have.css','font-weight','700').realMouseMove(500,500)
         cy.get('nav.side-nav .top-nav-link .nav-link.active')
         .then(($el) => {
            const after = window.getComputedStyle($el[0], 'after'); 
            expect(after.getPropertyValue('background-color')).to.eq('rgb(255, 194, 28)');
-         })
+         }).wait(1000)
     }
   CreateProject(projName)
   {
-    cy.get('.bkg-ylb').realHover({scrollBehavior:false}).click({scrollBehavior:false}).wait(2000)
+    cy.get('.bkg-ylb').realHover({scrollBehavior:false}).click({scrollBehavior:false}).realMouseMove(100,100).wait(2000)
     cy.url().should('include','/create')
     const random = projName+Math.floor(Math.random() * (999 - 100 + 1))
     cy.get('#name').type(random,{scrollBehavior:false}).wait(2000)
@@ -35,12 +34,18 @@ class AiContent{
   }
   OpenAiGen()
   {
-      cy.get('.divide-y > :nth-child(1) > :nth-child(1) > a').click({scrollBehavior:false}).wait(2000)
+      cy.get('.divide-y > :nth-child(1) > :nth-child(1) > a').click({scrollBehavior:false,force:true}).wait(2000)
       cy.get('.projects-name').realHover({scrollBehavior:false}).wait(2000)
       cy.get('body').should('have.css', 'font').and('include','Poppins')
-      cy.contains('AI Generator').realHover({scrollBehavior:false}).wait(2000)
-      .click({scrollBehavior:false,force:true}).wait(3000)
+      cy.contains('AI Generator').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false,force:true}).wait(3000)
       cy.get('body').should('have.css', 'font').and('include','Poppins')
+      cy.get('.projects-name').realHover({scrollBehavior:false}).wait(1000)
+      cy.contains('Content').should('have.css','font-weight','700').realMouseMove(500,500)
+      cy.get('nav.side-nav .top-nav-link .nav-link.active')
+        .then(($el) => {
+           const after = window.getComputedStyle($el[0], 'after'); 
+           expect(after.getPropertyValue('background-color')).to.eq('rgb(255, 194, 28)');
+         }).wait(1000)
   }
   SelectCategory()
   {
@@ -145,8 +150,7 @@ class AiContent{
     cy.get('.card-content_text-input').type("  "+'**'+'E-Scooter the best in world'+'**',{scrollBehavior:false}).wait(2000)
     cy.get('.save-btn').click({scrollBehavior:false}).wait(3000)
     cy.get('.projects-name').realHover({scrollBehavior:false}).wait(2000)
-    cy.contains('Funnel Builder').realHover({scrollBehavior:false}).wait(2000)
-    .click({scrollBehavior:false,force:true}).wait(3000)
+    cy.contains('Funnel Builder').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false,force:true}).wait(3000)
     cy.frameLoaded("[title='Page Builder']")
       cy.iframe("[title='Page Builder']").find("#view-page-link")
       .should('have.attr', 'href')  // Ensure the button has an href attribute

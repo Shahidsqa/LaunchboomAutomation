@@ -2,7 +2,7 @@
 class PaypalOauth{
     Oauth()
     {
-        cy.get('.divide-y > :nth-child(1) > :nth-child(1) > a').click({scrollBehavior:false}).wait(2000)
+        cy.get('.divide-y > :nth-child(1) > :nth-child(1) > a').click({scrollBehavior:false,force:true}).wait(2000)
         cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.get('[data-tabs-target="#payment"]').click({scrollBehavior:false}).wait(2000)
         cy.get('#payment_method').select('Paypal',{scrollBehavior:false,force:true}).wait(2000)

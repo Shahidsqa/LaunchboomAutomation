@@ -9,6 +9,13 @@ class ABTesting{
         cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.contains('A/B Testing').realHover({scrollBehavior:false}).wait(2000).click({force:true}).wait(3000)
         cy.get('body').should('have.css', 'font').and('include','Poppins')
+        cy.get('.projects-name').realHover({scrollBehavior:false}).wait(1000)
+        cy.contains('Analytics').should('have.css','font-weight','700').realMouseMove(500,500)
+        cy.get('nav.side-nav .top-nav-link .nav-link.active')
+        .then(($el) => {
+           const after = window.getComputedStyle($el[0], 'after'); 
+           expect(after.getPropertyValue('background-color')).to.eq('rgb(255, 194, 28)');
+         }).wait(1000)
         
     }
     MakeLPvariants()
