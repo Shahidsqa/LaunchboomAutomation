@@ -13,7 +13,7 @@ it('Stripe Payment Tab Testing',function(){
     obj1.SelectPaymentMethod()
     obj1.MakeAllTogglesOff()
     obj1.Currencies()
-   // obj1.CheckoutwithReservationCost()
+    obj1.CheckoutwithReservationCost()
     obj1.CheckoutwithPhoneNumber()
     obj1.CheckoutwithBillingAddress()
     obj1.DisableStripeElement()

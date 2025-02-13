@@ -8,7 +8,7 @@ it('Funnel Types/Flows',function(){
     cy.viewport(1200,600)
     const obj1 = new funnelTypes()
     const obj2 = new AiContent()
-    obj2.Login()
+   obj2.Login()
     //obj1.ProdStripeMethod()
    // obj1.ProdBillingAddress()
     obj1.StripeMethod()
