@@ -11,7 +11,6 @@ it('Funnel Types/Flows',function(){
      obj2.Login()
     //obj1.ProdStripeMethod()
    // obj1.ProdBillingAddress()
-<<<<<<< HEAD
      obj1.StripeMethod()
      obj1.BillingAddress()
      obj1.classicFunnel()
@@ -21,14 +20,3 @@ it('Funnel Types/Flows',function(){
      obj1.optoutFunnel()
      obj1.optoutFlow()
 })
-=======
-    // obj1.StripeMethod()
-    // obj1.BillingAddress()
-    // obj1.classicFunnel()
-    obj1.classicFlow()
-    // obj1.followerFunnel()
-    // obj1.followerFlow()
-    // obj1.optoutFunnel()
-    // obj1.optoutFlow()
-})
->>>>>>> 9d012b2cc88c4fbfc0873f0b4888ef9cef729fab
