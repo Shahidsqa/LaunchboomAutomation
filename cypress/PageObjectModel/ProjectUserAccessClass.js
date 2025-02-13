@@ -6,7 +6,8 @@ class ProjUserAccess{
         cy.get(':nth-child(1) > .text-right').click({scrollBehavior:false}).wait(500)
         cy.get(':nth-child(1) > .text-right > .relative > .absolute > .rounded-md').scrollIntoView().wait(2000)
         cy.get('body').should('have.css', 'font').and('include','Poppins')
-        cy.contains('Project User Access').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).wait(3000)
+        cy.contains('Project User Access').realHover({scrollBehavior:false}).wait(2000).should('have.css','background-color','rgb(244, 245, 247)')
+        .click({scrollBehavior:false}).wait(3000)
         cy.url().should('include','/user-access')
         cy.get('body').should('have.css', 'font').and('include','Poppins')
     }

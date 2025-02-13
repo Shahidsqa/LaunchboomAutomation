@@ -34,10 +34,11 @@ class AiContent{
   }
   OpenAiGen()
   {
-      cy.get('.divide-y > :nth-child(1) > :nth-child(1) > a').click({scrollBehavior:false,force:true}).wait(2000)
+      cy.get('.divide-y > :nth-child(1) > :nth-child(1) > a').click({scrollBehavior:false}).wait(2000)
       cy.get('.projects-name').realHover({scrollBehavior:false}).wait(2000)
       cy.get('body').should('have.css', 'font').and('include','Poppins')
-      cy.contains('AI Generator').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false,force:true}).wait(3000)
+      cy.contains('AI Generator').realHover({scrollBehavior:false}).wait(2000).should('have.css','background-color','rgba(255, 194, 28, 0.2)')
+      .click({scrollBehavior:false,force:true}).wait(3000)
       cy.get('body').should('have.css', 'font').and('include','Poppins')
       cy.get('.projects-name').realHover({scrollBehavior:false}).wait(1000)
       cy.contains('Content').should('have.css','font-weight','700').realMouseMove(500,500)
@@ -150,7 +151,8 @@ class AiContent{
     cy.get('.card-content_text-input').type("  "+'**'+'E-Scooter the best in world'+'**',{scrollBehavior:false}).wait(2000)
     cy.get('.save-btn').click({scrollBehavior:false}).wait(3000)
     cy.get('.projects-name').realHover({scrollBehavior:false}).wait(2000)
-    cy.contains('Funnel Builder').realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false,force:true}).wait(3000)
+    cy.contains('Funnel Builder').realHover({scrollBehavior:false}).wait(2000).should('have.css','background-color','rgba(255, 194, 28, 0.2)')
+    .click({scrollBehavior:false,force:true}).wait(3000)
     cy.frameLoaded("[title='Page Builder']")
       cy.iframe("[title='Page Builder']").find("#view-page-link")
       .should('have.attr', 'href')  // Ensure the button has an href attribute
