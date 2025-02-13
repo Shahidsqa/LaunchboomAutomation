@@ -146,7 +146,7 @@ class funnelTypes{
     cy.iframe("[title='Secure address input frame']").find('#Field-countryInput').select('Pakistan').wait(1000)
     cy.iframe("[title='Secure address input frame']").find('#Field-addressLine1Input').type('134 Eldridge Street').wait(1000)
     cy.iframe("[title='Secure address input frame']").find('#Field-localityInput').type('Lahore').wait(1000)
-    //cy.iframe("[title='Secure address input frame']").find('#Field-administrativeAreaInput').select('Alaska').wait(1000)
+   // cy.iframe("[title='Secure address input frame']").find('#Field-administrativeAreaInput').select('Alaska').wait(1000)
     cy.iframe("[title='Secure address input frame']").find('#Field-postalCodeInput').type('54000').wait(1000)
     cy.iframe("[title='Secure address input frame']").find('#Field-phoneInput').type('3014535267').wait(1000)
     cy.frameLoaded("[title='Secure payment input frame']")
@@ -154,7 +154,7 @@ class funnelTypes{
     cy.iframe("[title='Secure payment input frame']").find('#Field-numberInput').type('4111111111111111').wait(1000)
     cy.iframe("[title='Secure payment input frame']").find('#Field-expiryInput').type('04 / 27').wait(1000)
     cy.iframe("[title='Secure payment input frame']").find('#Field-cvcInput').type('111').wait(2000)
-    cy.get('#card-button').click().invoke('text','Processing...').wait(5000)
+    cy.get('#card-button').click().invoke('text','Processing...').wait(10000)
     cy.url().should('include','/reserved')
     cy.url().should('include','utm_campaign=customLink').wait(1000)
 
