@@ -14,7 +14,7 @@ it('Funnel Types/Flows',function(){
     // obj1.StripeMethod()
     // obj1.BillingAddress()
     // obj1.classicFunnel()
-   // obj1.classicFlow()
+    obj1.classicFlow()
     // obj1.followerFunnel()
     // obj1.followerFlow()
     // obj1.optoutFunnel()
