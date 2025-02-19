@@ -2,15 +2,11 @@
 class AiContent{
     Login()
     {
-        cy.visit(Cypress.env('LaunchkitAppUrl'))
-        cy.wait(2000)
-        cy.get('#email').type('syed@launchboom.com')
-        cy.wait(1000)
-        cy.get('#password').type('12345678')
-        cy.wait(1000)
+        cy.visit(Cypress.env('LaunchkitAppUrl')).wait(2000)
+        cy.get('#email').type('syed@launchboom.com').wait(1000)
+        cy.get('#password').type('12345678').wait(1000)
         cy.get('body').should('have.css', 'font').and('include','Poppins')
-        cy.get('.button').realHover().click()
-        cy.wait(2000)
+        cy.get('.button').realHover().click().wait(2000)
         cy.get('body').should('have.css', 'font').and('include','Poppins')
         cy.url().should('eq','https://release.launchboom.com/admin/projects')
         cy.get('nav.side-nav .top-nav-link .nav-link.active').realHover().wait(1000)
@@ -18,8 +14,7 @@ class AiContent{
         cy.get('nav.side-nav .top-nav-link .nav-link.active')
         .then(($el) => {
            const after = window.getComputedStyle($el[0], 'after'); 
-           expect(after.getPropertyValue('background-color')).to.eq('rgb(255, 194, 28)');
-         }).wait(1000)
+           expect(after.getPropertyValue('background-color')).to.eq('rgb(255, 194, 28)')}).wait(1000)
     }
   CreateProject(projName)
   {

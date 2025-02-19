@@ -9,8 +9,6 @@ it('Funnel Types/Flows',function(){
     const obj1 = new funnelTypes()
     const obj2 = new AiContent()
      obj2.Login()
-    //obj1.ProdStripeMethod()
-   // obj1.ProdBillingAddress()
      obj1.StripeMethod()
      obj1.BillingAddress()
      obj1.classicFunnel()

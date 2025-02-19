@@ -25,31 +25,6 @@ class funnelTypes{
                 })
              }
 
-             ProdStripeMethod()
-             {
-              cy.visit(Cypress.env('ProjectUrl')).wait(2000)
-              cy.url().should('include','/edit')
-              cy.get('[data-tabs-target="#payment"]').click({scrollBehavior:false}).wait(2000)
-              cy.get('#payment > .py-4 > :nth-child(2) > :nth-child(1) > :nth-child(2) > div > .minh-label')
-              .select('Stripe',{scrollBehavior:false,force:true}).wait(2000)
-              cy.get('#payment > .py-4 > :nth-child(2) > :nth-child(3)').scrollIntoView().wait(2000)
-              cy.get(':nth-child(3) > :nth-child(2) > .toggle-button > .mt-2 > .toggle')
-              .then(($toggle) => {
-                // Get the background color of the toggle
-                   const color = $toggle.css('background-color')
-                     if(color === 'rgb(201, 201, 201)')
-                       {
-                        cy.get(':nth-child(3) > :nth-child(2) > .toggle-button > .mt-2 > .toggle').click({scrollBehavior:false}).wait(2000)
-      
-                       }
-                      else 
-                        {
-                          cy.log('Stripe Element Toggle is ON')
-                        }
-                    })
-
-             }
-
      BillingAddress()
         {
            cy.get('#payment > .py-4 > :nth-child(2) > :nth-child(8)').scrollIntoView().wait(2000)
@@ -68,29 +43,6 @@ class funnelTypes{
            }
          })
          cy.get('#payment').scrollIntoView().wait(2000)
-         cy.get('#payment > .py-4 > .mb-8 > :nth-child(2) > .bkg-ylb').realHover({scrollBehavior:false})
-         .wait(1000).click({scrollBehavior:false}).realMouseMove(100,100).wait(2000)
-         cy.get('#alert-1').should('include.text','Project Successfully Updated')
-     }
-
-     ProdBillingAddress()
-     {
-      cy.get('#payment > .py-4 > :nth-child(2) > :nth-child(7)').scrollIntoView().wait(2000)
-      cy.get('#payment > .py-4 > :nth-child(2) > :nth-child(7) > :nth-child(2) > .toggle-button > .mt-2 > .toggle')
-      .then(($toggle) => {
-        // Get the background color of the toggle
-         const color = $toggle.css('background-color')
-         if(color === 'rgb(201, 201, 201)')
-         {
-          cy.get('#payment > .py-4 > :nth-child(2) > :nth-child(7) > :nth-child(2) > .toggle-button > .mt-2 > .toggle').click({scrollBehavior:false}).wait(2000)
-
-         }
-         else 
-         {
-          cy.log('Billing Address Toggle is ON')
-         }
-       })
-       cy.get('#payment').scrollIntoView().wait(2000)
          cy.get('#payment > .py-4 > .mb-8 > :nth-child(2) > .bkg-ylb').realHover({scrollBehavior:false})
          .wait(1000).click({scrollBehavior:false}).realMouseMove(100,100).wait(2000)
          cy.get('#alert-1').should('include.text','Project Successfully Updated')
