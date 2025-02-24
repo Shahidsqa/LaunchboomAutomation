@@ -8,7 +8,7 @@ class OverviewTab
     cy.get('#overview > .py-4 > .mb-8 > :nth-child(2) > .bkg-ylb').realHover({scrollBehavior:false})
     .click({scrollBehavior:false}).realMouseMove(100,100).wait(3000)
     cy.get('.mt-1\\.5 > li').should('include.text','The name has already been taken.').wait(1000)
-    const random = 'Updated Project'+Math.floor(Math.random() * (999 - 100 + 1))
+    const random = 'Updated Project'+Cypress._.random(1,9999).toString()
     cy.get('#name').clear({scrollBehavior:false}).wait(1000).type(random,{scrollBehavior:false}).wait(1000)
     cy.get('#overview > .py-4 > .mb-8 > :nth-child(2) > .bkg-ylb').realHover({scrollBehavior:false})
     .click({scrollBehavior:false}).realMouseMove(100,100).wait(2000)

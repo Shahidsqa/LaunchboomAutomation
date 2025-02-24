@@ -65,7 +65,7 @@ class funnelTypes{
              cy.wait(5000)
           cy.url().should('include','utm_campaign=customLink')
           cy.url().should('include','v=')
-             const randomemail = 'ClassicFlow'+Math.floor(Math.random() * (999 - 100 + 1))+"@gmail.com"
+             const randomemail = 'ClassicFlow'+Cypress._.random(1,9999).toString()+"@gmail.com"
           //   cy.url().then((currentUrl)=>{
           //  if (currentUrl.endsWith('v=A'))
           //  {
@@ -129,7 +129,7 @@ class funnelTypes{
     cy.wait(5000)
     cy.url().should('include','utm_campaign=customLink')
           cy.url().should('include','v=')
-    const randomemail = 'FollowerFlow'+Math.floor(Math.random() * (999 - 100 + 1))+"@gmail.com"
+    const randomemail = 'FollowerFlow'+Cypress._.random(1,9999).toString()+"@gmail.com"
         // cy.url().then((currentUrl)=>{
         //     if (currentUrl.endsWith('v=A'))
         //     {
@@ -174,7 +174,7 @@ class funnelTypes{
         cy.wait(5000)
         cy.url().should('include','utm_campaign=customLink')
           cy.url().should('include','v=')
-        const randomemail = 'OptOutFlow'+Math.floor(Math.random() * (999 - 100 + 1))+"@gmail.com"
+        const randomemail = 'OptOutFlow'+Cypress._.random(1,9999).toString()+"@gmail.com"
             // cy.url().then((currentUrl)=>{
             //     if (currentUrl.endsWith('v=A'))
             //     {

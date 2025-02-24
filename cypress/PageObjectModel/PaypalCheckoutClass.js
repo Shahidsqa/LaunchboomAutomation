@@ -70,7 +70,7 @@ class PaypalCheckout{
         cy.visit(Cypress.env('CheckoutAppUrl2'))
         cy.wait(5000)
         cy.url().should('include','utm_campaign=customLink')
-        const randomemail = 'PaypalCheckout'+Math.floor(Math.random() * (999 - 100 + 1))+"@gmail.com"
+        const randomemail = 'PaypalCheckout'+Cypress._.random(1,9999).toString()+"@gmail.com"
            cy.get('.IDL5I64BAI9W9TJ0 > #top-cta-location').scrollIntoView().wait(2000)
            cy.get('.IDL5I64BAI9W9TJ0 > #top-cta-location > .v4-n--inner > .v4-n--inn-align > .v4-n--bottom-content-wrap > .v4-n--cta-inputs-wrap > .sign-up-form > .email').type(randomemail,{scrollBehavior:false})
            cy.wait(2000)

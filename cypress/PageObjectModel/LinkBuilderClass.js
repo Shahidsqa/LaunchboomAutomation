@@ -49,7 +49,7 @@ class LinkBuilder{
         cy.get('.p-4').should('include.text','The Link Name has already been taken.').wait(1000)
 
         // Create link with no duplication
-        const random = 'CustomLink'+Math.floor(Math.random() * (999 - 100 + 1))
+        const random = 'CustomLink'+Cypress._.random(1,9999).toString()
         cy.get('#unique_identifier').clear({scrollBehavior:false}).wait(1000).type(random,{scrollBehavior:false}).wait(2000)        
         cy.get('#category_id').then($select => {
             const options = $select.find('option')

@@ -20,7 +20,7 @@ class AiContent{
   {
     cy.get('.bkg-ylb').realHover({scrollBehavior:false}).click({scrollBehavior:false}).realMouseMove(100,100).wait(2000)
     cy.url().should('include','/create')
-    const random = projName+Math.floor(Math.random() * (999 - 100 + 1))
+    const random = projName+Cypress._.random(1, 9999).toString()
     cy.get('#name').type(random,{scrollBehavior:false}).wait(2000)
     cy.get('body').should('have.css', 'font').and('include','Poppins')
     cy.get('#overview > .py-4 > .mb-8 > :nth-child(2) > .bkg-ylb').realHover({scrollBehavior:false})

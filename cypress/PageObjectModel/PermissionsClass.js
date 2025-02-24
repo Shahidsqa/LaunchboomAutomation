@@ -1,5 +1,6 @@
 class Permissions {
-    Roles(){
+    Roles()
+    {
         cy.visit('https://release.launchboom.com/admin/roles').wait(2000)
         cy.get('#myTab > :nth-child(3)').click({scrollBehavior:false}).wait(2000)
         cy.get("[href='https://release.launchboom.com/admin/roles/8/edit']").realHover({scrollBehavior:false})

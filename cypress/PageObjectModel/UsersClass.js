@@ -24,7 +24,7 @@ class Users{
         cy.get('.mx-auto > .inline-flex').realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false}).wait(2000)
         cy.url().should('include','/users/create')
         cy.get('#name').type('Faisal Proj Owner',{scrollBehavior:false}).wait(1000)
-        const randomowner = 'f.faisalathar'+'+owner'+Math.floor(Math.random() * (999 - 100 + 1))+'@gmail.com'
+        const randomowner = 'f.faisalathar'+'+owner'+Cypress._.random(1,9999).toString()+'@gmail.com'
         cy.get('#email').type(randomowner,{scrollBehavior:false}).wait(1000)
         cy.get('#password').type('Asdf@1234',{scrollBehavior:false}).wait(1000)
         cy.get('#confirm-password').type('Asdf@1234',{scrollBehavior:false}).wait(1000)
@@ -45,7 +45,7 @@ class Users{
         cy.get('.mx-auto > .inline-flex').realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false}).wait(2000)
         cy.url().should('include','/users/create')
         cy.get('#name').type('Faisal Proj User',{scrollBehavior:false}).wait(1000)
-        const randomuser = 'f.faisalathar'+'+projuser'+Math.floor(Math.random() * (999 - 100 + 1))+'@gmail.com'
+        const randomuser = 'f.faisalathar'+'+projuser'+Cypress._.random(1,9999).toString()+'@gmail.com'
         cy.get('#email').type(randomuser,{scrollBehavior:false}).wait(1000)
         cy.get('#password').type('Asdf@1234',{scrollBehavior:false}).wait(1000)
         cy.get('#confirm-password').type('Asdf@1234',{scrollBehavior:false}).wait(1000)
@@ -64,7 +64,7 @@ class Users{
         cy.get('.mx-auto > .inline-flex').realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false}).wait(2000)
         cy.url().should('include','/users/create')
         cy.get('#name').type('Faisal Gaming User',{scrollBehavior:false}).wait(1000)
-        const randomgamer = 'f.faisalathar'+'+gaminguser'+Math.floor(Math.random() * (999 - 100 + 1))+'@gmail.com'
+        const randomgamer = 'f.faisalathar'+'+gaminguser'+Cypress._.random(1,9999).toString()+'@gmail.com'
         cy.get('#email').type(randomgamer,{scrollBehavior:false}).wait(1000)
         cy.get('#password').type('Asdf@1234',{scrollBehavior:false}).wait(1000)
         cy.get('#confirm-password').type('Asdf@1234',{scrollBehavior:false}).wait(1000)
