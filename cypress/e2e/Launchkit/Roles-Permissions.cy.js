@@ -11,6 +11,8 @@ it('Roles and Permissions',function(){
     // Disable Permissions
     obj2.Login()
     obj1.Roles()
+    obj1.BasicAccess()
+    obj1.GamingUserAccess()
     obj1.SettingPermissionsOff()
     obj1.Logout()
     obj1.GameUserLogin()
@@ -19,6 +21,7 @@ it('Roles and Permissions',function(){
     // Enable Permissions
     obj2.Login()
     obj1.Roles()
+    obj1.GamingUserAccess()
     obj1.SettingPermissionsOn()
     obj1.Logout()
     obj1.GameUserLogin()
