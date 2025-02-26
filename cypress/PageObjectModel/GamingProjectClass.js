@@ -10,7 +10,8 @@ class Gaming {
         cy.get('#name').type('Faisal Gaming User',{scrollBehavior:false}).wait(1000)
         const randomgamer = 'f.faisalathar'+'+gaminguser'+Cypress._.random(1,9999).toString()+'@gmail.com'
         cy.get('#email').type(randomgamer,{scrollBehavior:false}).wait(1000)
-        cy.get('#email').invoke('val').then((user)=>{const gamer = user
+        cy.get('#email').invoke('val').then((user)=>
+            {const gamer = user
         cy.get('#password').type('Asdf@1234',{scrollBehavior:false}).wait(1000)
         cy.get('#confirm-password').type('Asdf@1234',{scrollBehavior:false}).wait(1000)
         cy.get(':nth-child(6) > .form-checkbox').scrollIntoView().click({force:true}).wait(1000)
