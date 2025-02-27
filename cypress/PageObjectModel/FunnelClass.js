@@ -61,8 +61,8 @@ class funnelTypes{
     }
 
         classicFlow(){
-            cy.visit(Cypress.env('CheckoutAppUrl2'))
-             cy.wait(5000)
+          cy.visit(Cypress.env('CheckoutAppUrl2'))
+          cy.waitUntil(() => cy.url().then(url => url.includes('test.launchboomer.com/')),{timeout: 10000, interval: 500,})
           cy.url().should('include','utm_campaign=customLink')
           cy.url().should('include','v=')
              const randomemail = 'ClassicFlow'+Cypress._.random(1,9999).toString()+"@gmail.com"
@@ -84,7 +84,7 @@ class funnelTypes{
           //  }
         //})
     
-    cy.wait(3000)
+    cy.waitUntil(() => cy.url().then(url => url.includes('/reservation')),{timeout: 10000, interval: 500,})
     cy.url().should('include','/reservation').wait(1000)
     cy.url().should('include','utm_campaign=customLink')
     cy.url().should('include','v=')
@@ -106,7 +106,8 @@ class funnelTypes{
     cy.iframe("[title='Secure payment input frame']").find('#Field-numberInput').type('4111111111111111').wait(1000)
     cy.iframe("[title='Secure payment input frame']").find('#Field-expiryInput').type('04 / 27').wait(1000)
     cy.iframe("[title='Secure payment input frame']").find('#Field-cvcInput').type('111').wait(2000)
-    cy.get('#card-button').click({force:true}).invoke('text','Processing...').wait(5000)
+    cy.get('#card-button').click({force:true}).invoke('text','Processing...')
+    cy.waitUntil(() => cy.url().then(url => url.includes('/reserved')),{timeout: 10000, interval: 500,})
     cy.url().should('include','/reserved')
     cy.url().should('include','utm_campaign=customLink').wait(1000)
 
@@ -126,7 +127,7 @@ class funnelTypes{
 
   followerFlow(){
     cy.visit(Cypress.env('CheckoutAppUrl2'))
-    cy.wait(5000)
+    cy.waitUntil(() => cy.url().then(url => url.includes('test.launchboomer.com/')),{timeout: 10000, interval: 500,})
     cy.url().should('include','utm_campaign=customLink')
           cy.url().should('include','v=')
     const randomemail = 'FollowerFlow'+Cypress._.random(1,9999).toString()+"@gmail.com"
@@ -148,7 +149,7 @@ class funnelTypes{
         //    }
         // })
     
-    cy.wait(3000)
+    cy.waitUntil(() => cy.url().then(url => url.includes('/follower')),{timeout: 10000, interval: 500,})
     cy.url().should('include','/follower').wait(1000)
     cy.url().should('include','utm_campaign=customLink')
     cy.url().should('not.include','v=')
@@ -171,7 +172,7 @@ class funnelTypes{
 
   optoutFlow(){
     cy.visit(Cypress.env('CheckoutAppUrl2'))
-        cy.wait(5000)
+    cy.waitUntil(() => cy.url().then(url => url.includes('test.launchboomer.com/')),{timeout: 10000, interval: 500,})
         cy.url().should('include','utm_campaign=customLink')
           cy.url().should('include','v=')
         const randomemail = 'OptOutFlow'+Cypress._.random(1,9999).toString()+"@gmail.com"
@@ -193,12 +194,13 @@ class funnelTypes{
             //     }
             // })
         
-        cy.wait(3000)
+            cy.waitUntil(() => cy.url().then(url => url.includes('/reservation')),{timeout: 10000, interval: 500,})
         cy.url().should('include','/reservation').wait(1000)
         cy.url().should('include','utm_campaign=customLink')
           cy.url().should('include','v=')
         cy.get('.btn').scrollIntoView().wait(1000)
-        cy.get('.no-thanks-link').click({scrollBehavior:false}).wait(2000)
+        cy.get('.no-thanks-link').click({scrollBehavior:false})
+        cy.waitUntil(() => cy.url().then(url => url.includes('/thank-you')),{timeout: 10000, interval: 500,})
         cy.url().should('include','/thank-you').wait(1000)
         cy.url().should('include','utm_campaign=customLink')
         cy.document().then((doc) => {

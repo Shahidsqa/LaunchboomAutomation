@@ -99,7 +99,8 @@ class paypalpaymentTab
           cy.iframe("[title='paypal_card_expiry_field']").find("[name='expiry']").type('04 / 27',{scrollBehavior:false}).wait(1000)
           cy.frameLoaded("[title='paypal_card_cvv_field']")
           cy.iframe("[title='paypal_card_cvv_field']").find("[name='cvv']").type('111',{scrollBehavior:false}).wait(2000)
-          cy.get('#card-field-submit-button').scrollIntoView().should('include.text','€').wait(2000).click({scrollBehavior:false}).wait(5000)
+          cy.get('#card-field-submit-button').scrollIntoView().should('include.text','€').wait(2000).click({scrollBehavior:false})
+          cy.waitUntil(() => cy.url().then(url => url.includes('/reserved')),{timeout: 10000, interval: 500,})
           cy.url().should('include','/reserved')
              // Checkout with GBP ccurrency
         cy.visit(Cypress.env('ProjectUrl'))
@@ -125,7 +126,8 @@ class paypalpaymentTab
           cy.iframe("[title='paypal_card_expiry_field']").find("[name='expiry']").type('04 / 27',{scrollBehavior:false}).wait(1000)
           cy.frameLoaded("[title='paypal_card_cvv_field']")
           cy.iframe("[title='paypal_card_cvv_field']").find("[name='cvv']").type('111',{scrollBehavior:false}).wait(2000)
-          cy.get('#card-field-submit-button').scrollIntoView().should('include.text','£').wait(2000).click({scrollBehavior:false}).wait(5000)
+          cy.get('#card-field-submit-button').scrollIntoView().should('include.text','£').wait(2000).click({scrollBehavior:false})
+          cy.waitUntil(() => cy.url().then(url => url.includes('/reserved')),{timeout: 10000, interval: 500,})
           cy.url().should('include','/reserved')
                   // Checkout with AUD ccurrency
         cy.visit(Cypress.env('ProjectUrl'))
@@ -151,7 +153,8 @@ class paypalpaymentTab
           cy.iframe("[title='paypal_card_expiry_field']").find("[name='expiry']").type('04 / 27',{scrollBehavior:false}).wait(1000)
           cy.frameLoaded("[title='paypal_card_cvv_field']")
           cy.iframe("[title='paypal_card_cvv_field']").find("[name='cvv']").type('111',{scrollBehavior:false}).wait(2000)
-          cy.get('#card-field-submit-button').scrollIntoView().should('include.text','A$').wait(2000).click({scrollBehavior:false}).wait(5000)
+          cy.get('#card-field-submit-button').scrollIntoView().should('include.text','A$').wait(2000).click({scrollBehavior:false})
+          cy.waitUntil(() => cy.url().then(url => url.includes('/reserved')),{timeout: 10000, interval: 500,})
           cy.url().should('include','/reserved')
                     // Checkout with CAD ccurrency
         cy.visit(Cypress.env('ProjectUrl'))
@@ -177,7 +180,8 @@ class paypalpaymentTab
           cy.iframe("[title='paypal_card_expiry_field']").find("[name='expiry']").type('04 / 27',{scrollBehavior:false}).wait(1000)
           cy.frameLoaded("[title='paypal_card_cvv_field']")
           cy.iframe("[title='paypal_card_cvv_field']").find("[name='cvv']").type('111',{scrollBehavior:false}).wait(2000)
-          cy.get('#card-field-submit-button').scrollIntoView().should('include.text','CA$').wait(2000).click({scrollBehavior:false}).wait(5000)
+          cy.get('#card-field-submit-button').scrollIntoView().should('include.text','CA$').wait(2000).click({scrollBehavior:false})
+          cy.waitUntil(() => cy.url().then(url => url.includes('/reserved')),{timeout: 10000, interval: 500,})
           cy.url().should('include','/reserved')
           // Checkout with USD ccurrency
         cy.visit(Cypress.env('ProjectUrl'))
@@ -203,7 +207,8 @@ class paypalpaymentTab
           cy.iframe("[title='paypal_card_expiry_field']").find("[name='expiry']").type('04 / 27',{scrollBehavior:false}).wait(1000)
           cy.frameLoaded("[title='paypal_card_cvv_field']")
           cy.iframe("[title='paypal_card_cvv_field']").find("[name='cvv']").type('111',{scrollBehavior:false}).wait(2000)
-          cy.get('#card-field-submit-button').scrollIntoView().should('include.text','$').wait(2000).click({scrollBehavior:false}).wait(5000)
+          cy.get('#card-field-submit-button').scrollIntoView().should('include.text','$').wait(2000).click({scrollBehavior:false})
+          cy.waitUntil(() => cy.url().then(url => url.includes('/reserved')),{timeout: 10000, interval: 500,})
           cy.url().should('include','/reserved')
     }
 
@@ -233,7 +238,8 @@ class paypalpaymentTab
           cy.iframe("[title='paypal_card_expiry_field']").find("[name='expiry']").type('04 / 27',{scrollBehavior:false}).wait(1000)
           cy.frameLoaded("[title='paypal_card_cvv_field']")
           cy.iframe("[title='paypal_card_cvv_field']").find("[name='cvv']").type('111',{scrollBehavior:false}).wait(2000)
-          cy.get('#card-field-submit-button').scrollIntoView().should('include.text','5').wait(2000).click({scrollBehavior:false}).wait(5000)
+          cy.get('#card-field-submit-button').scrollIntoView().should('include.text','5').wait(2000).click({scrollBehavior:false})
+          cy.waitUntil(() => cy.url().then(url => url.includes('/reserved')),{timeout: 10000, interval: 500,})
           cy.url().should('include','/reserved')
    }
 
@@ -293,7 +299,8 @@ class paypalpaymentTab
           cy.iframe("[title='paypal_card_expiry_field']").find("[name='expiry']").type('04 / 27',{scrollBehavior:false}).wait(1000)
           cy.frameLoaded("[title='paypal_card_cvv_field']")
           cy.iframe("[title='paypal_card_cvv_field']").find("[name='cvv']").type('111',{scrollBehavior:false}).wait(2000)
-          cy.get('#card-field-submit-button').scrollIntoView().wait(1000).click({scrollBehavior:false}).wait(5000)
+          cy.get('#card-field-submit-button').scrollIntoView().wait(1000).click({scrollBehavior:false})
+          cy.waitUntil(() => cy.url().then(url => url.includes('/reserved')),{timeout: 10000, interval: 500,})
           cy.url().should('include','/reserved')
    }
 
@@ -340,7 +347,8 @@ class paypalpaymentTab
         cy.iframe("[title='paypal_card_expiry_field']").find("[name='expiry']").type('04 / 27',{scrollBehavior:false}).wait(1000)
         cy.frameLoaded("[title='paypal_card_cvv_field']")
         cy.iframe("[title='paypal_card_cvv_field']").find("[name='cvv']").type('111',{scrollBehavior:false}).wait(2000)
-        cy.get('#card-field-submit-button').scrollIntoView().click({scrollBehavior:false}).wait(5000)
+        cy.get('#card-field-submit-button').scrollIntoView().click({scrollBehavior:false})
+        cy.waitUntil(() => cy.url().then(url => url.includes('/reserved')),{timeout: 10000, interval: 500,})
         cy.url().should('include','/reserved')
     }
 
@@ -380,7 +388,7 @@ class paypalpaymentTab
         cy.get('.position-relative').scrollIntoView().wait(2000)
         cy.frameLoaded("[title='PayPal']")
         cy.iframe("[title='PayPal']").find("div[aria-label='Debit or Credit Card']")
-        .realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false}).wait(5000)
+        .realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false}).wait(6000)
         cy.iframe("[title='PayPal']").within(()=>{
             cy.frameLoaded("[title='paypal_card_form']")
             cy.iframe("[title='paypal_card_form']").within(()=>{
@@ -389,13 +397,17 @@ class paypalpaymentTab
                 cy.get("[name='credit-card-security']").type('111',{scrollBehavior:false}).wait(1000).click()
                 cy.get("[name='givenName']").type('Faisal',{scrollBehavior:false}).wait(1000)
                 cy.get("[name='familyName']").type('Athar',{scrollBehavior:false}).wait(1000)
+                cy.get("[name='line1']").type('134 Eldridge street',{scrollBehavior:false}).wait(1000)
+                cy.get("[name='city']").type('New York',{scrollBehavior:false}).wait(1000)
+                cy.get("[name='state']").select('Alaska',{scrollBehavior:false,force:true}).wait(1000)
                 cy.get("[name='postcode']").type('99999',{scrollBehavior:false}).wait(1000)
                 cy.get("[name='phone']").type('(236) 555-5523',{scrollBehavior:false}).wait(1000)
-                cy.get("[name='email']").type('f.faisalathar@gmail.com',{scrollBehavior:false}).wait(2000)
-                cy.get("#submit-button").realHover({scrollBehavior:false}).wait(2000).click({scrollBehavior:false}).wait(5000)
+                cy.get("[name='email']").type('f.faisalathar@gmail.com',{scrollBehavior:false}).wait(2000).click()
+                cy.get("#submit-button").realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false})
+                cy.waitUntil(() => cy.url().then(url => url.includes('/reserved')),{timeout: 10000, interval: 500,})
                 cy.url().should('include','/reserved')
 
-            })
+               })
             
         })
     }

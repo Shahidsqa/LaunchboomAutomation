@@ -75,7 +75,7 @@ class PaypalCheckout{
            cy.get('.IDL5I64BAI9W9TJ0 > #top-cta-location > .v4-n--inner > .v4-n--inn-align > .v4-n--bottom-content-wrap > .v4-n--cta-inputs-wrap > .sign-up-form > .email').type(randomemail,{scrollBehavior:false})
            cy.wait(2000)
            cy.get('.IDL5I64BAI9W9TJ0 > #top-cta-location > .v4-n--inner > .v4-n--inn-align > .v4-n--bottom-content-wrap > .v4-n--cta-inputs-wrap > .sign-up-form > .cta-form-submit').click({scrollBehavior:false})
-          cy.wait(4000)
+           cy.waitUntil(() => cy.url().then(url => url.includes('/reservation')),{timeout: 10000, interval: 500,})
           cy.url().should('include','/reservation').wait(1000)
           cy.url().should('include','utm_campaign=customLink')
           cy.get('.btn').scrollIntoView().wait(1000)
@@ -96,7 +96,8 @@ class PaypalCheckout{
           cy.iframe("[title='paypal_card_expiry_field']").find("[name='expiry']").type('04 / 27',{scrollBehavior:false}).wait(1000)
           cy.frameLoaded("[title='paypal_card_cvv_field']")
           cy.iframe("[title='paypal_card_cvv_field']").find("[name='cvv']").type('111',{scrollBehavior:false}).wait(2000)
-          cy.get('#card-field-submit-button').click().wait(6000)
+          cy.get('#card-field-submit-button').click()
+          cy.waitUntil(() => cy.url().then(url => url.includes('/reserved')),{timeout: 10000, interval: 500,})
           cy.url().should('include','/reserved')
           cy.url().should('include','utm_campaign=customLink')
      }

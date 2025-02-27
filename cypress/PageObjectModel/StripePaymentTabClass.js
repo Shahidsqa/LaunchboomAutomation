@@ -98,7 +98,8 @@ class stripepaymentTab{
         cy.iframe("[title='Secure payment input frame']").find('#Field-expiryInput').type('04 / 27').wait(1000)
         cy.iframe("[title='Secure payment input frame']").find('#Field-cvcInput').type('111').wait(1000)
         cy.iframe("[title='Secure payment input frame']").find('#Field-countryInput').select('Pakistan',{scrollBehavior:false,force:true}).wait(1000)
-        cy.get('#card-button').scrollIntoView().should('include.text','€').wait(2000).click({scrollBehavior:false}).invoke('text','Processing...').wait(5000)
+        cy.get('#card-button').scrollIntoView().should('include.text','€').wait(2000).click({scrollBehavior:false}).invoke('text','Processing...')
+        cy.waitUntil(() => cy.url().then(url => url.includes('/reserved')),{timeout: 10000, interval: 500,})
         cy.url().should('include','/reserved')
          // Checkout with GBP currency
          cy.visit(Cypress.env('ProjectUrl'))
@@ -123,7 +124,8 @@ class stripepaymentTab{
         cy.iframe("[title='Secure payment input frame']").find('#Field-expiryInput').type('04 / 27').wait(1000)
         cy.iframe("[title='Secure payment input frame']").find('#Field-cvcInput').type('111').wait(1000)
         cy.iframe("[title='Secure payment input frame']").find('#Field-countryInput').select('Pakistan',{scrollBehavior:false,force:true}).wait(1000)
-        cy.get('#card-button').scrollIntoView().should('include.text','£').wait(2000).click({scrollBehavior:false}).invoke('text','Processing...').wait(5000)
+        cy.get('#card-button').scrollIntoView().should('include.text','£').wait(2000).click({scrollBehavior:false}).invoke('text','Processing...')
+        cy.waitUntil(() => cy.url().then(url => url.includes('/reserved')),{timeout: 10000, interval: 500,})
         cy.url().should('include','/reserved')
         // Checkout with AUD currency
         cy.visit(Cypress.env('ProjectUrl'))
@@ -148,7 +150,8 @@ class stripepaymentTab{
         cy.iframe("[title='Secure payment input frame']").find('#Field-expiryInput').type('04 / 27').wait(1000)
         cy.iframe("[title='Secure payment input frame']").find('#Field-cvcInput').type('111').wait(1000)
         cy.iframe("[title='Secure payment input frame']").find('#Field-countryInput').select('Pakistan',{scrollBehavior:false,force:true}).wait(1000)
-        cy.get('#card-button').scrollIntoView().should('include.text','A$').wait(2000).click({scrollBehavior:false}).invoke('text','Processing...').wait(5000)
+        cy.get('#card-button').scrollIntoView().should('include.text','A$').wait(2000).click({scrollBehavior:false}).invoke('text','Processing...')
+        cy.waitUntil(() => cy.url().then(url => url.includes('/reserved')),{timeout: 10000, interval: 500,})
         cy.url().should('include','/reserved')
         // Checkout with CAD currency
         cy.visit(Cypress.env('ProjectUrl'))
@@ -173,7 +176,8 @@ class stripepaymentTab{
         cy.iframe("[title='Secure payment input frame']").find('#Field-expiryInput').type('04 / 27').wait(1000)
         cy.iframe("[title='Secure payment input frame']").find('#Field-cvcInput').type('111').wait(1000)
         cy.iframe("[title='Secure payment input frame']").find('#Field-countryInput').select('Pakistan',{scrollBehavior:false,force:true}).wait(1000)
-        cy.get('#card-button').scrollIntoView().should('include.text','CA$').wait(2000).click({scrollBehavior:false}).invoke('text','Processing...').wait(5000)
+        cy.get('#card-button').scrollIntoView().should('include.text','CA$').wait(2000).click({scrollBehavior:false}).invoke('text','Processing...')
+        cy.waitUntil(() => cy.url().then(url => url.includes('/reserved')),{timeout: 10000, interval: 500,})
         cy.url().should('include','/reserved')
       // Checkout with INR currency
       cy.visit(Cypress.env('ProjectUrl'))
@@ -201,7 +205,8 @@ class stripepaymentTab{
       cy.iframe("[title='Secure payment input frame']").find('#Field-expiryInput').type('04 / 27').wait(1000)
       cy.iframe("[title='Secure payment input frame']").find('#Field-cvcInput').type('111').wait(1000)
       cy.iframe("[title='Secure payment input frame']").find('#Field-countryInput').select('Pakistan',{scrollBehavior:false,force:true}).wait(1000)
-      cy.get('#card-button').scrollIntoView().should('include.text','₹50').wait(2000).click({scrollBehavior:false}).invoke('text','Processing...').wait(5000)
+      cy.get('#card-button').scrollIntoView().should('include.text','₹50').wait(2000).click({scrollBehavior:false}).invoke('text','Processing...')
+      cy.waitUntil(() => cy.url().then(url => url.includes('/reserved')),{timeout: 10000, interval: 500,})
       cy.url().should('include','/reserved')
          // Checkout with USD currency
         cy.visit(Cypress.env('ProjectUrl'))
@@ -256,7 +261,8 @@ class stripepaymentTab{
         cy.iframe("[title='Secure payment input frame']").find('#Field-expiryInput').type('04 / 27').wait(1000)
         cy.iframe("[title='Secure payment input frame']").find('#Field-cvcInput').type('111').wait(1000)
         cy.iframe("[title='Secure payment input frame']").find('#Field-countryInput').select('Pakistan',{scrollBehavior:false,force:true}).wait(1000)
-        cy.get('#card-button').scrollIntoView().should('include.text','5').wait(2000).click({scrollBehavior:false}).invoke('text','Processing...').wait(5000)
+        cy.get('#card-button').scrollIntoView().should('include.text','5').wait(2000).click({scrollBehavior:false}).invoke('text','Processing...')
+        cy.waitUntil(() => cy.url().then(url => url.includes('/reserved')),{timeout: 10000, interval: 500,})
         cy.url().should('include','/reserved')
    }
 
@@ -298,7 +304,8 @@ class stripepaymentTab{
         cy.iframe("[title='Secure payment input frame']").find('#Field-expiryInput').type('04 / 27').wait(1000)
         cy.iframe("[title='Secure payment input frame']").find('#Field-cvcInput').type('111').wait(1000)
         cy.iframe("[title='Secure payment input frame']").find('#Field-countryInput').select('Pakistan',{scrollBehavior:false,force:true}).wait(1000)
-        cy.get('#card-button').scrollIntoView().click({scrollBehavior:false}).invoke('text','Processing...').wait(5000)
+        cy.get('#card-button').scrollIntoView().click({scrollBehavior:false}).invoke('text','Processing...')
+        cy.waitUntil(() => cy.url().then(url => url.includes('/reserved')),{timeout: 10000, interval: 500,})
         cy.url().should('include','/reserved')
    }
 
@@ -345,7 +352,8 @@ class stripepaymentTab{
         cy.iframe("[title='Secure payment input frame']").find('#Field-numberInput').type('4111111111111111').wait(1000)
         cy.iframe("[title='Secure payment input frame']").find('#Field-expiryInput').type('04 / 27').wait(1000)
         cy.iframe("[title='Secure payment input frame']").find('#Field-cvcInput').type('111').wait(2000)
-        cy.get('#card-button').scrollIntoView().click({scrollBehavior:false}).invoke('text','Processing...').wait(5000)
+        cy.get('#card-button').scrollIntoView().click({scrollBehavior:false}).invoke('text','Processing...')
+        cy.waitUntil(() => cy.url().then(url => url.includes('/reserved')),{timeout: 10000, interval: 500,})
         cy.url().should('include','/reserved')
    }
 
@@ -391,7 +399,8 @@ class stripepaymentTab{
            cy.iframe("[title='Secure expiration date input frame']").find("[name='exp-date']").type('04/28',{scrollBehavior:false}).wait(1000)
            cy.frameLoaded("[title='Secure CVC input frame']")
            cy.iframe("[title='Secure CVC input frame']").find("[name='cvc']").type('111',{scrollBehavior:false}).wait(2000)
-           cy.get('#card-button').scrollIntoView().click({scrollBehavior:false}).wait(5000)
+           cy.get('#card-button').scrollIntoView().click({scrollBehavior:false})
+           cy.waitUntil(() => cy.url().then(url => url.includes('/reserved')),{timeout: 10000, interval: 500,})
            cy.url().should('include','/reserved')
           
          }
