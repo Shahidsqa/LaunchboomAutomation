@@ -106,7 +106,7 @@ class funnelTypes{
     cy.iframe("[title='Secure payment input frame']").find('#Field-numberInput').type('4111111111111111').wait(1000)
     cy.iframe("[title='Secure payment input frame']").find('#Field-expiryInput').type('04 / 27').wait(1000)
     cy.iframe("[title='Secure payment input frame']").find('#Field-cvcInput').type('111').wait(2000)
-    cy.get('#card-button').click({force:true}).invoke('text','Processing...')
+    cy.get('#card-button').scrollIntoView().click({force:true}).invoke('text','Processing...')
     cy.waitUntil(() => cy.url().then(url => url.includes('/reserved')),{timeout: 10000, interval: 500,})
     cy.url().should('include','/reserved')
     cy.url().should('include','utm_campaign=customLink').wait(1000)
@@ -155,6 +155,7 @@ class funnelTypes{
     cy.url().should('not.include','v=')
     cy.get('.btn').scrollIntoView().wait(1000)
     cy.get('.btn').realHover().wait(2000).click().wait(6000)
+    cy.url().should('not.equal','test.launchboomer.com/follower')
   }
 
   optoutFunnel(){
