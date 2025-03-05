@@ -105,7 +105,7 @@ class funnelTypes{
     cy.get("[title='Secure payment input frame']").scrollIntoView().wait(1000)
     cy.iframe("[title='Secure payment input frame']").find('#Field-numberInput').type('4111111111111111').wait(1000)
     cy.iframe("[title='Secure payment input frame']").find('#Field-expiryInput').type('04 / 27').wait(1000)
-    cy.iframe("[title='Secure payment input frame']").find('#Field-cvcInput').type('111').wait(2000)
+    cy.iframe("[title='Secure payment input frame']").find('#Field-cvcInput').type('111').wait(1000)
     cy.iframe("[title='Secure payment input frame']").find('#Field-linkMobilePhoneCountryInput').select('United States (+1)').wait(1000)
     cy.iframe("[title='Secure payment input frame']").find('#Field-linkMobilePhoneInput').type('(236) 555-5523').wait(1000)
     cy.iframe("[title='Secure payment input frame']").find('#Field-linkLegalNameInput').type('Faisal Athar').wait(2000)  
