@@ -2,12 +2,6 @@ name: Cypress Tests
 
 on:
   workflow_dispatch:
-    inputs:
-      test_spec:
-        description: 'Path to the Cypress spec file'
-        required: true
-        default: 'cypress/e2e/Launchkit/FunnelFlows.cy.js'
-
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04

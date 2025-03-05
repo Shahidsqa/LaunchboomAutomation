@@ -19,3 +19,37 @@ import 'cypress-mochawesome-reporter/register'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+// Pipeline to Run single spec:
+/*
+name: Cypress Tests
+
+on:
+  workflow_dispatch:
+    inputs:
+      test_spec:
+        description: 'Path to the Cypress spec file'
+        required: true
+        default: 'cypress/e2e/Launchkit/FunnelFlows.cy.js'
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout the latest code
+        uses: actions/checkout@v4
+      - name: Run a Specific Cypress Test
+        uses: cypress-io/github-action@v6
+        with:
+          browser: electron
+          spec: ${{ github.event.inputs.test_spec }}
+      - name: Save screenshots (if any)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-artifacts
+          path: cypress/screenshots
+          
+          */
+
+            
+        
