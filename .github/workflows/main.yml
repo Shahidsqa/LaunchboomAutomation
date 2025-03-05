@@ -8,17 +8,13 @@ jobs:
     steps:
       - name: Checkout the latest code
         uses: actions/checkout@v4
-      - name: Run a Specific Cypress Test
+      - name: Run All Cypress Tests
         uses: cypress-io/github-action@v6
         with:
           browser: electron
-          spec: ${{ github.event.inputs.test_spec }}
       - name: Save screenshots (if any)
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: cypress-artifacts
           path: cypress/screenshots
-
-            
-        
