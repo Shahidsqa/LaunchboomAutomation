@@ -17,4 +17,5 @@ it('Funnel Types/Flows',function(){
      obj1.followerFlow()
      obj1.optoutFunnel()
      obj1.optoutFlow()
+     
 })

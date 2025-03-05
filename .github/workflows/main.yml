@@ -6,7 +6,7 @@ on:
       test_spec:
         description: 'Path to the Cypress spec file'
         required: true
-        default: 'cypress/e2e/FunnelFlows.cy.js'
+        default: 'cypress\e2e\Launchkit\FunnelFlows.cy.js'
 
 jobs:
   cypress-run:
