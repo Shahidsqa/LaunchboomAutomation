@@ -11,7 +11,12 @@ it("Audiences",function(){
      obj1.Audiences()
      obj1.CreateAudienceDuplicateId()
      obj1.EditAudience()
-     obj1.ShareAudience()
+     obj1.ShareAudienceTablets()
+     obj1.CheckAudienceTablets()
+     obj1.ShareAudienceTugWar()
+     obj1.CheckAudienceTugWar()
+     obj1.ShareAudience4Health()
      obj1.SharedAudiences()
+     obj1.RemoveProjOwner()
 
 })
