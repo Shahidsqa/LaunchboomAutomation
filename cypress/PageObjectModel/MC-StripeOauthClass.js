@@ -21,6 +21,8 @@ class McStripeOauth{
         cy.get('.swal2-confirm').realHover().wait(1000).click().wait(1000)
         cy.get('[data-tabs-target="#email"]').click({scrollBehavior:false}).wait(1000)
         cy.get('#alert-1').should('include.text','Project Successfully Updated').wait(1000)
+        cy.get('#email > .py-4 > :nth-child(2) > .flex > :nth-child(2) > [style="align-self:flex-end;"] > .mc-btn-wrap > p').invoke('text')
+       .then((text) => {expect(text.trim().replace(/\s+/g, ' ')).to.contain('LaunchKit is connected to the account LaunchKit and linked to the list: LaunchKit')})
         cy.get('#change-list').should('include.text','Change Mailchimp List')
    }
 

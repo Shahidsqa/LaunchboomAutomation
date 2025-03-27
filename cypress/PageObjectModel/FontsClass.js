@@ -10,7 +10,7 @@ class Fonts {
         cy.get('.select2-search__field').type('Alice{enter}',{scrollBehavior:false}).wait(2000)        
         cy.get('#select2-copy_font-container').click({scrollBehavior:false}).wait(1000)
         cy.get('.select2-search__field').type('Oswald{enter}',{scrollBehavior:false}).wait(2000)
-        cy.get('.swal2-confirm').realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false}).wait(1500)
+        cy.get('.swal2-confirm').scrollIntoView().realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false}).wait(1500)
         cy.get('.toast-message').should('include.text','Settings Saved Successfully').wait(1000)
       }
       

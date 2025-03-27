@@ -15,6 +15,5 @@ it('Mailchimp/Stripe Oauth',function(){
     obj1.ResetmcOauth()
     obj1.stripeOauth()
     obj1.ResetstripeOauth()
-    
 
 })
