@@ -1,5 +1,7 @@
 const { defineConfig } = require('cypress');
 
+const registerGmailTask = require('./cypress/support/gmail-task')
+
 module.exports = defineConfig({
   watchForFileChanges:false,
   env: {
@@ -11,15 +13,32 @@ module.exports = defineConfig({
   },
   reporter: 'cypress-mochawesome-reporter',
   e2e: {
+    experimentalSessionAndOrigin: true,
     chromeWebSecurity: false,
+    watchForFileChanges:false,
     pageLoadTimeout:120000,
     setupNodeEvents(on, config) {
+      registerGmailTask(on, config);
+      return config,
 
       require('cypress-mochawesome-reporter/plugin')(on)
-      
-      chromeWebSecurity: false
       
     },
   },
   
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

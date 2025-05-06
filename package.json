@@ -21,6 +21,8 @@
   },
   "dependencies": {
     "cypress-real-events": "^1.13.0",
-    "cypress-wait-until": "^3.0.2"
+    "cypress-wait-until": "^3.0.2",
+    "imap-simple": "^5.1.0",
+    "mailparser": "^3.7.2"
   }
 }

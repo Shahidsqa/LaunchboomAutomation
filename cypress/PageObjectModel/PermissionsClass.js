@@ -176,7 +176,7 @@ class Permissions {
         cy.get('.mb-4').should('include.text','Forbidden')
         cy.visit('https://release.launchboom.com/admin/projects/1510/content',{failOnStatusCode: false}).wait(3000)
         cy.get('.mb-4').should('include.text','Forbidden')
-        cy.get('.button').realHover({scrollBehavior:false}).click({scrollBehavior:false}).realMouseMove(100,100).wait(2000)
+        cy.get('.button').realHover({scrollBehavior:false}).click({scrollBehavior:false,force:true}).realMouseMove(100,100).wait(2000)
 
      }
 

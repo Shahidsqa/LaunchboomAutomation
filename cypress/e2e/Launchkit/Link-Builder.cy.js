@@ -5,7 +5,7 @@ import LinkBuilder from "../../PageObjectModel/LinkBuilderClass"
 // returning false here prevents cypress from failing tests
 Cypress.on("uncaught:exception",()=>false)
 it('Link Builder',function(){
-    cy.viewport(1200,600)
+    cy.viewport(1200, 6000); 
     const obj1 = new LinkBuilder()
     const obj2 = new AiContent()
     obj2.Login()

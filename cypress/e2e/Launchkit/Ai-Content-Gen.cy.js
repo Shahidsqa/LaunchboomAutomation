@@ -10,6 +10,8 @@ it('Ai-Content-Gen',function(){
      obj.CreateProject('Ai-Gen')
      obj.OpenAiGen()
      obj.SelectCategory()
+     obj.DesignExample()
+     obj.ColorPalette()
      obj.ProductName()
      obj.ProductFeatures()
      obj.TargetAudience()

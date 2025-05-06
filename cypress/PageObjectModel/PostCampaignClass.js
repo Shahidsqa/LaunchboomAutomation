@@ -23,10 +23,10 @@ class PostCampaign{
           EnterProjectLink()
           {
             cy.get('.igg-btn').realHover({scrollBehavior:false}).wait(1000).click({scrollBehavior:false}).realMouseMove(100,100).wait(2000)
-            const link = "https://www.indiegogo.com/projects/reliq-the-world-s-first-hybrid-control-surface--2#/"          
-            cy.get('#project_ks_url').click()
-            cy.intercept('POST','https://release.launchboom.com/livewire/message/campaign-ad-analysis.index').as('campPage')    
-            cy.get('#project_ks_url').invoke('val', link).trigger('input').type('{ctrl}')
+           const link = "https://www.indiegogo.com/projects/reliq-the-world-s-first-hybrid-control-surface--2#/"          
+           cy.get('#project_ks_url').click()
+           cy.intercept('POST','https://release.launchboom.com/livewire/message/campaign-ad-analysis.index').as('campPage')    
+           cy.get('#project_ks_url').invoke('val', link).trigger('input').type('{ctrl}')
              cy.wait('@campPage',{timeout:60000}).then((interception) => {
                const Name = interception.response.body.effects?.dispatches[0]?.data?.project_info?.name
                expect(Name).equals("Reliq: The World's First Hybrid Control Surface");
