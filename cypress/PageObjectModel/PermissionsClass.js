@@ -163,7 +163,7 @@ class Permissions {
         cy.contains('Link Builder').should('not.exist')
         cy.contains('Post Campaign').should('not.exist').wait(1000)
         cy.contains('Content').scrollIntoView().wait(1000)
-        cy.contains('AI Generator').realHover({scrollBehavior:false}).wait(2000).should('have.css','background-color','rgba(255, 194, 28, 0.2)')
+        cy.contains('Content Assistant').realHover({scrollBehavior:false}).wait(2000).should('have.css','background-color','rgba(255, 194, 28, 0.2)')
         .click({scrollBehavior:false,force:true}).wait(2000)
         cy.url().should('include','/2576/content')
         cy.visit('https://release.launchboom.com/admin/projects/1766/content').wait(2000)
