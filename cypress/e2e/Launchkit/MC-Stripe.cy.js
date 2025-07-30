@@ -12,8 +12,8 @@ it('Mailchimp/Stripe Oauth',function(){
     obj2.CreateProject('MC/StripeOauth')
     obj1.mcOAuth()
     obj1.ChangeList()
-    obj1.ResetmcOauth()
+   // obj1.ResetmcOauth()
     obj1.stripeOauth()
-    obj1.ResetstripeOauth()
+   // obj1.ResetstripeOauth()
 
 })
