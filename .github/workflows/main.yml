@@ -9,25 +9,25 @@ on:
         required: true
         options:
           - Run all specs
-          - cypress/e2e/AB-Testing.cy.js
-          - cypress/e2e/Ai-Content-Gen.cy.js
-          - cypress/e2e/Audiences.cy.js
-          - cypress/e2e/Dashboard.cy.js
-          - cypress/e2e/DataDrivenLogin.cy.js
-          - cypress/e2e/Font-Checking.cy.js
-          - cypress/e2e/FunnelFlows.cy.js
-          - cypress/e2e/GamingProject.cy.js
-          - cypress/e2e/Link-Builder.cy.js
-          - cypress/e2e/MC-Stripe.cy.js
-          - cypress/e2e/Overview-Tab.cy.js
-          - cypress/e2e/PayPal-Checkout.cy.js
-          - cypress/e2e/PayPal-Oauth.cy.js
-          - cypress/e2e/PaypalPaymentTab.cy.js
-          - cypress/e2e/Post-Campaign.cy.js
-          - cypress/e2e/Project-User-Access.cy.js
-          - cypress/e2e/Roles-Permissions.cy.js
-          - cypress/e2e/StripePaymentTab.cy.js
-          - cypress/e2e/UsersManagement.cy.js
+          - cypress/e2e/Launchkit/AB-Testing.cy.js
+          - cypress/e2e/Launchkit/Ai-Content-Gen.cy.js
+          - cypress/e2e/Launchkit/Audiences.cy.js
+          - cypress/e2e/Launchkit/Dashboard.cy.js
+          - cypress/e2e/Launchkit/DataDrivenLogin.cy.js
+          - cypress/e2e/Launchkit/Font-Checking.cy.js
+          - cypress/e2e/Launchkit/FunnelFlows.cy.js
+          - cypress/e2e/Launchkit/GamingProject.cy.js
+          - cypress/e2e/Launchkit/Link-Builder.cy.js
+          - cypress/e2e/Launchkit/MC-Stripe.cy.js
+          - cypress/e2e/Launchkit/Overview-Tab.cy.js
+          - cypress/e2e/Launchkit/PayPal-Checkout.cy.js
+          - cypress/e2e/Launchkit/PayPal-Oauth.cy.js
+          - cypress/e2e/Launchkit/PaypalPaymentTab.cy.js
+          - cypress/e2e/Launchkit/Post-Campaign.cy.js
+          - cypress/e2e/Launchkit/Project-User-Access.cy.js
+          - cypress/e2e/Launchkit/Roles-Permissions.cy.js
+          - cypress/e2e/Launchkit/StripePaymentTab.cy.js
+          - cypress/e2e/Launchkit/UsersManagement.cy.js
 
         default: Run all specs
 
